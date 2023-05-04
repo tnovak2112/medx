@@ -3,6 +3,7 @@
 } */
 .container-fluid{
     background-color: var(--black);
+    bottom: 0;
 }
 .d-flex{
     height: 180px;

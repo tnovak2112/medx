@@ -20,4 +20,9 @@ export class ProfileService {
     const url = `${this.base}/perfil/obtenerPerfilesPorCategoria?degree_id=${degree_id}`;
     return this.http.get<any>(url);
   }
+
+  getALlProfiles(user_name: string): Observable<any> {
+    const url = `${this.base}/perfil/obtenerPerfilesPorCoincidencia?user_name=${user_name}`;
+    return this.http.get<any>(url);
+  }
 }

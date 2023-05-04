@@ -36,3 +36,88 @@ fa-icon{
     font-size: 3rem;
     color: rgba(0, 168, 120, 0.4);;
 }
+
+.stock-search-component-small {
+    color: #000;
+  
+    .stock-search {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      border: 1px solid #efefef;
+      padding: 0.5em;
+      border-radius: 5px;
+      background-color: #fff;
+      width: 450px;
+      font-size: 20px;
+    }
+    .search-box {
+      font-size: 20px;
+      width: calc(100% - 30px);
+      border: none;
+  
+      &:focus {
+        outline: none;
+      }
+    }
+    .icon-search-wrapper {
+      cursor: pointer;
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #000;
+    }
+    .stock-search-result {
+      position: absolute;
+      z-index: 999;
+      border: 1px solid #efefef;
+      margin-top: -15px;
+      background-color: #fff;
+      max-height: 150px;
+      width: calc(49%);
+      overflow-y: auto;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    .search-result-item {
+      display: table;
+      table-layout: fixed;
+      padding: 0.25em 0.5em;
+      border-bottom: 1px solid #efefef;
+      cursor: pointer;
+      text-decoration: none!important;
+  
+      > div {
+        display: table-cell;
+      }
+    }
+    .search-result-name {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 2em;
+      color: #000;
+      text-decoration: none!important;
+    }
+  }
+
+  
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 168, 120, 0.8); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

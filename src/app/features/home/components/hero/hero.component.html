@@ -17,11 +17,25 @@
         placeholder="Busca por nombre, ubicacion, especialidad, o lo que necesites."
         aria-label="Example text with button addon"
         aria-describedby="button-addon1"
+        [ngModel]="search"
+        (ngModelChange)="searchFunc($event)"
       />
 
       <button class="border shadow-sm" type="button" id="button-addon1">
         Buscar
       </button>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center stock-search-component-small">
+    <div *ngIf="searchProfiles.length && show" class="stock-search-result">
+      <div *ngFor="let profile of searchProfiles" class="search-result-item">
+        <div class="search-result-name">
+          <strong (click)="showProfileFunction(profile.user_id)"
+            >{{ profile.first_name }} {{ profile.middle_name }}
+            {{ profile.last_name }} {{ profile.second_lastname }}</strong
+          >
+        </div>
+      </div>
     </div>
   </div>
 
