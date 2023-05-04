@@ -1,0 +1,28 @@
+/* div{
+    border: 1px solid aquamarine;
+} */
+.icon-container{
+    padding: 12px 20px;
+    margin: 2px;
+    border-radius: 100%;
+    background-color: var(--white);
+}
+fa-icon{
+    font-size: 2rem;
+    color: var(--blue);
+}
+#whatsapp-icon{
+    background-color: #34D841;
+}
+#whatsapp-icon fa-icon{
+    color: var(--white);
+}
+.img-container{
+    width: 150px;
+    height: 80px;
+}
+.img-container img{
+    width: 120px;
+    height: 100%;
+    object-fit: contain;
+}

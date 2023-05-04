@@ -1,0 +1,83 @@
+<div class="container mb-5 rounded p-5" id="container">
+  <div class="row text-center">
+    <h1>Registro</h1>
+    <h3>Completa el formulario para crear tu cuenta!</h3>
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+    <div class="row p-5">
+      <div class="col-12 p-5 shadow">
+        <div class="row">
+          <h3>Formulario de registro</h3>
+          <p>Completa el formulario</p>
+          <div class="row">
+            <div class="col-12 p-3">
+              <div class="mb-3">
+                <label for="nameInput" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  formControlName="email"
+                />
+              </div>
+              <div
+                *ngIf="
+                  registerForm.controls['email'].valid === false &&
+                  registerForm.controls['email'].touched
+                "
+                class="alert-error"
+              >
+                Por favor ingrese un email correcto.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 p-3">
+              <div class="mb-3">
+                <label for="nameInput" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                />
+              </div>
+              <div
+                *ngIf="
+                  registerForm.controls['password'].valid === false &&
+                  registerForm.controls['password'].touched
+                "
+                class="alert-error"
+              >
+                Por favor ingresa una contraseña correcta.
+              </div>
+            </div>
+            <div class="col-6 p-3">
+              <div class="mb-3">
+                <label for="nameInput" class="form-label"
+                  >Repite Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="repeat_password"
+                />
+              </div>
+              <div
+                *ngIf="
+                  registerForm.controls['repeat_password'].valid === false &&
+                  registerForm.controls['repeat_password'].touched
+                "
+                class="alert-error"
+              >
+                Las contraseñas deben cohincidir.
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type="submit" class="w-50">Registrarse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

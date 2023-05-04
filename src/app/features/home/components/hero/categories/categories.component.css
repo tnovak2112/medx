@@ -1,0 +1,22 @@
+/* div{
+    border: 1px solid red;
+} */
+fa-icon{
+    font-size: 40px;
+    color: rgba(14, 17, 22, 0.8);
+}
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    font-size: 1rem;
+}
+a, 
+#icon-container, 
+fa-icon{
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.hiperlink {
+    cursor: pointer;
+}

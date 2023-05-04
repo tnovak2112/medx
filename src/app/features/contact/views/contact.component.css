@@ -1,0 +1,35 @@
+h3{
+    font-family: Helvetica;
+    letter-spacing: 2px;
+}
+h4{
+    font-family: Helvetica;
+    letter-spacing: 2px;
+}
+h5{
+    font-family: Helvetica;
+}
+p{
+    font-family: "Titulos";
+    color: rgba(0, 168, 120, 1);
+}
+label{
+    font-family: "TItulos";
+    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+}
+button{
+    background-color: rgba(0, 168, 120, .8);
+    color: white;
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    padding: 10px 0px;
+    border: none;
+    transition: background-color .5s;
+}
+button:hover{
+    background-color: rgba(0, 168, 120, .5);;
+}

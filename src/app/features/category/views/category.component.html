@@ -1,0 +1,7 @@
+<ng-container *ngIf="profileData">
+  <app-filters [degreeId]="degree_id"></app-filters>
+  <app-filters-display
+    [profileData]="profileData"
+    [categoryData]="categoryData"
+  ></app-filters-display>
+</ng-container>

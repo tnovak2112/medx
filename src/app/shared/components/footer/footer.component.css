@@ -1,0 +1,23 @@
+/* div{
+    border: 1px solid red;
+} */
+.container-fluid{
+    background-color: var(--black);
+}
+.d-flex{
+    height: 180px;
+}
+.icon-container{
+    width: 180px;
+}
+img{
+    width: 150px;
+}
+fa-icon{
+    font-size: 26px;
+    color: var(--white);
+}
+p{
+    color: gray;
+    padding: 0;
+}

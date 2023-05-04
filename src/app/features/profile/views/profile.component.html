@@ -1,0 +1,16 @@
+<div class="container mb-5 rounded p-5" id="container" *ngIf="!profileExist">
+  <div class="row text-center">
+    <h1>Bienvenido a MEDX!</h1>
+    <h3>
+      No hemos encontrado información sobre ti, por favor completa el siguiente
+      formulario
+    </h3>
+  </div>
+</div>
+
+<!-- <div class="container mb-5 rounded p-5" id="container" *ngIf="profileExist">
+  <div class="row text-center">
+    <h1>Bienvenido a MEDX!</h1>
+  </div>
+</div> -->
+<app-doc-profile [userId]="userId" *ngIf="userId"></app-doc-profile>

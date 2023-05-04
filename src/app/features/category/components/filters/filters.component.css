@@ -1,0 +1,42 @@
+/* div{
+    border: 1px solid aqua;
+} */
+button{
+    background-color: white;
+    letter-spacing: 1px;
+    border: none;
+    color: rgba(14, 17, 22, 0.8);
+    font-weight: 500;
+    transition: color font-weight .2s;
+}
+button:hover{
+    font-weight: 700;
+    color: rgba(0, 168, 120);
+}
+.row{
+    background-color: white;
+}
+
+.dropdown-menu {
+    max-height: 280px;
+    overflow-y: auto;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 168, 120, 0.8); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
