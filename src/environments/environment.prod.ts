@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://sigac-api-qa.caciquetech.com/api/v1",
+  apiUrl: "http://44.212.59.253:3000/",
 };
