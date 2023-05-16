@@ -8,6 +8,7 @@ import { SharedModule } from "./shared/components/shared.module";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { JwtInterceptor } from "./core/interceptor/jwt.interceptor";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { JwtInterceptor } from "./core/interceptor/jwt.interceptor";
   exports: [SharedModule],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent],
 })
