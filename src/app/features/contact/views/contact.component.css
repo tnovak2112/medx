@@ -1,5 +1,5 @@
 h3{
-    font-family: Helvetica;
+    font-family: Roboto;
     letter-spacing: 2px;
 }
 h4{
@@ -11,7 +11,7 @@ h5{
 }
 p{
     font-family: "Titulos";
-    color: rgba(0, 168, 120, 1);
+    color: var(--lightblue);
 }
 label{
     font-family: "TItulos";
@@ -19,7 +19,7 @@ label{
     font-size: 1.2rem;
 }
 button{
-    background-color: rgba(0, 168, 120, .8);
+    background-color: var(--purple);
     color: white;
     font-family: Helvetica;
     font-weight: 700;
@@ -29,7 +29,13 @@ button{
     padding: 10px 0px;
     border: none;
     transition: background-color .5s;
+    transition: color .5s;
 }
 button:hover{
-    background-color: rgba(0, 168, 120, .5);;
+    background-color: var(--yellow);
+    color: var(--blue);
+    border: 0.5px solid var(--blue);
+}
+#yellow-bg{
+    background-color: var(--yellow);
 }

@@ -1,17 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     background-color: white;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */;
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
 @font-face {
     font-family: Titulos;
     src: url(assets/fonts/Questrial-Regular.ttf);
 }
 :root{
-    --bwhite: #F7F4F3;
-    --white: #FFFFFF;
-    --blue: #093D77;
+    --white: #FFFFFF;  
     --black: #040926;
+    --yellow: #F9E2AF;
+    --lightblue: #009FBD;
+    --lightblueO: rgba(35,159,189,0.5);
+    --blue: #210062;
+    --purple: #77037B; 
+    --purpleO: rgba(119,3,123,0.2);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, 
+body { 
+    height: 100%; 
+}
+

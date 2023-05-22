@@ -3,11 +3,11 @@
 } */
 fa-icon{
     font-size: 40px;
-    color: rgba(14, 17, 22, 0.8);
+    color: var(--lightblue);
 }
 p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
+    color: var(--purple);
     font-size: 1rem;
 }
 a, 

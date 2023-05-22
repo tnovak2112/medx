@@ -16,12 +16,11 @@
 }
 #picture-icon{
     font-size: 1.5rem;
-    border: 1px solid red;
     padding: 10px 40px;
     border-radius: 30px;
 }
 .form-check-input{
-    background-color: rgba(0, 168, 120, .8);
+    background-color: var(--blue);
     padding: 8px;
     margin-right: 5px;
 }
@@ -52,10 +51,14 @@ p{
     font-size: 1.2rem;
 }
 fa-icon{
-    color: rgba(0, 168, 120);
+    color: var(--purple);
     font-size: 1.3rem;
 }
 h6{
     font-family: "Titulos";
     font-size: 1.2rem;
+}
+.accordion-button{
+    background-color: var(--lightblueO);
+    color: var(--white);
 }
