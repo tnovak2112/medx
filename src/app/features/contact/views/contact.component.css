@@ -1,20 +1,23 @@
+h1{
+    font-family: Titulos;
+}
 h3{
-    font-family: Roboto;
+    font-family: Titulos;
     letter-spacing: 2px;
 }
 h4{
-    font-family: Helvetica;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 2px;
 }
 h5{
-    font-family: Helvetica;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 p{
     font-family: "Titulos";
     color: var(--lightblue);
 }
 label{
-    font-family: "TItulos";
+    font-family: Titulos;
     letter-spacing: 0.5px;
     font-size: 1.2rem;
 }
@@ -37,5 +40,12 @@ button:hover{
     border: 0.5px solid var(--blue);
 }
 #yellow-bg{
-    background-color: var(--yellow);
+    background-color: rgba(218, 226, 223, 0.5);
+}
+#subtitle{
+    font-family: Titulos;
+    color: black;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    font-weight: 700;
 }

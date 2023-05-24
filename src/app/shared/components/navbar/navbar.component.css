@@ -2,7 +2,7 @@
     background-color: white;
 }
 #image-container{
-    max-width: 100px;
+    max-width: 120px;
 }
 #login{
     padding: 12px 25px;
@@ -43,10 +43,13 @@ a{
     letter-spacing: 2px;
     font-weight: 700;
     font-family: Titulos;
-    font-size: 1rem;
+    font-size: 1.2rem;
     transition: color .5s;
     background-color: none;
+    text-decoration: none;
+    transition: text-decoration .5s;
 }
 a:hover{
-    color: var(--purple);
+    color: var(--lightblue);
+    text-decoration: underline;
 }

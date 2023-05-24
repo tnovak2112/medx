@@ -1,9 +1,6 @@
-div{
-    border: 1px solid aquamarine;
-}
+
 #main-container{
     background-color: white;
-    height: 100%;
 }
 button{
     padding:5px 25px;
@@ -35,7 +32,7 @@ h5{
 }
 fa-icon{
     font-size: 3rem;
-    color: var(--yellow);
+    color: var(--purpleO);
 }
 
 .stock-search-component-small {

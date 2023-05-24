@@ -1,11 +1,11 @@
 .container{
-    margin-bottom: 200px;
+    margin-bottom: auto;
     background-color: var(--white);
 }
 h5{
-    font-family: Helvetica;
+    font-family: Titulos;
     letter-spacing: 5px;
     font-weight: 700;
     font-size: 1rem;
-    color: rgba(14, 17, 22, 0.8);
+    color: rgba(14, 17, 22, 0.9);
 }
