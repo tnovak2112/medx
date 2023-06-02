@@ -1,6 +1,4 @@
-/* div{
-    border: 1px solid royalblue;
-} */
+
 .container{
     background-color: white;
 } 
@@ -14,14 +12,49 @@
     object-fit: cover;
     object-position:top
 }
-#picture-icon{
-    font-size: 1.5rem;
-    border: 1px solid red;
-    padding: 10px 40px;
-    border-radius: 30px;
+#linkedin-btn{
+    background-color: #0a66c2;
+    padding: 2px 0px;
+    border: none;
+}
+#linkedin-icon{
+    font-size: 1rem;
+    color: white;
+    vertical-align: middle;
+}
+#instagram-btn{
+    background-color: #e1306c;
+    padding: 2px 0px;
+    border: none;
+}
+#instagram-icon{
+    font-size: 1rem;
+    color: white;
+    vertical-align: middle;
+}
+#share-btn{
+    padding: 2px 0px;
+    background-color: #25D366;
+    color: white;
+    border: none;
+}
+#share-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.6rem;
+    color: white;
+    vertical-align: middle;
+}
+#whatsapp-btn{
+    font-size: 1rem;
+    color: white;
+    vertical-align: middle;
+}
+#info-text{
+    font-family: Titulos;
+    letter-spacing: 2px;
 }
 .form-check-input{
-    background-color: rgba(0, 168, 120, .8);
+    background-color: var(--blue);
     padding: 8px;
     margin-right: 5px;
 }
@@ -52,10 +85,14 @@ p{
     font-size: 1.2rem;
 }
 fa-icon{
-    color: rgba(0, 168, 120);
+    color: var(--purple);
     font-size: 1.3rem;
 }
 h6{
     font-family: "Titulos";
     font-size: 1.2rem;
+}
+.accordion-button{
+    background-color: var(--purpleO);
+    color: var(--blue);
 }

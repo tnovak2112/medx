@@ -1,12 +1,13 @@
-/* div{
-    border: 1px solid red;
-} */
+
 .container-fluid{
-    background-color: var(--black);
+    background-color: var(--blue);
     bottom: 0;
+    position: relative;
+    left: 0;
+    width: 100%;
 }
 .d-flex{
-    height: 180px;
+    height: 120px;
 }
 .icon-container{
     width: 180px;
@@ -16,9 +17,9 @@ img{
 }
 fa-icon{
     font-size: 26px;
-    color: var(--white);
+    color: var(--yellow);
 }
 p{
-    color: gray;
+    color: var(--yellow);
     padding: 0;
 }

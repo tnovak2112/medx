@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { JwtInterceptor } from "./core/interceptor/jwt.interceptor";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

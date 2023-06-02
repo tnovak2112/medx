@@ -1,12 +1,12 @@
 .container-fluid{
     background-color: white;
 }
-.col-4 img{
-    max-width: 150px;
+#image-container{
+    max-width: 120px;
 }
 #login{
     padding: 12px 25px;
-    background-color: rgba(14, 17, 22, 0.8); 
+    background-color: var(--blue); 
     letter-spacing: 1px;
     color: white;
     font-weight: 700;
@@ -15,7 +15,7 @@
     transition: background-color .5s;
 }
 #login:hover{
-    background-color: rgba(14, 17, 22, 0.6);;
+    background-color: var(--yellow);
 }
 #register{
     padding: 12px 25px;
@@ -39,12 +39,17 @@ fa-icon{
     color: white;
 }
 a{
-    color: rgba(14, 17, 22, 0.8);
+    color: var(--blue);
     letter-spacing: 2px;
     font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Titulos;
+    font-size: 1.2rem;
     transition: color .5s;
+    background-color: none;
+    text-decoration: none;
+    transition: text-decoration .5s;
 }
 a:hover{
-    color: rgba(0, 168, 120, 1);
+    color: var(--lightblue);
+    text-decoration: underline;
 }

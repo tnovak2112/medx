@@ -10,6 +10,7 @@ import {
   faPhone,
   faEnvelope,
   faUserGraduate,
+  faShareNodes,
 } from "@fortawesome/free-solid-svg-icons";
 import { CategoryService } from "src/app/core/service/category/category.service";
 import { CommuneService } from "src/app/core/service/commune/commune.service";
@@ -43,6 +44,7 @@ export class DocProfileComponent implements OnInit {
   envelope = faEnvelope;
   whatsapp = faWhatsapp;
   graduate = faUserGraduate;
+  share = faShareNodes;
 
   constructor(
     private readonly profileService: ProfileService,

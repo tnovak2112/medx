@@ -63,16 +63,18 @@ h5, h6, p{
 }
 button{
     border-radius: 15px;
-    border: 1px solid rgba(14, 17, 22, 0.3);
+    border: none;
     padding: 10px;
     font-family: Helvetica;
     font-size: 0.8rem;
     letter-spacing: 2px;
     font-weight: 700;
     color: white;
-    background-color:  rgba(0, 168, 120, 0.8);
+    background-color:  var(--lightblue);
     transition: background-color .5s;
+    transition: color .5s;
 }
 button:hover{
-    background-color: rgba(0, 168, 120, 0.5);
+    background-color: var(--yellow);
+    color: var(--purple);
 }
