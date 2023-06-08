@@ -15,6 +15,11 @@ export class CategoryComponent implements OnInit {
   categoryData: any;
   profileData: any;
 
+  specialityId: any = 0;
+  subSpecialityId: any = 0;
+  communeId: any = 0;
+  insuranceId: any = 0;
+
   constructor(
     private readonly activeRoute: ActivatedRoute,
     private readonly profileService: ProfileService,
@@ -38,6 +43,16 @@ export class CategoryComponent implements OnInit {
       this.degree_id = Categories.Nutricion;
     }
 
+    this.getProfiles();
+  }
+
+  getProfiles(
+    specialityId: number = 0,
+    subSpecialityId: number = 0,
+    communeId: number = 0,
+    insuranceId: number = 0
+  ) {
+    this.profileData = [];
     this.degreeService.getDegrees().subscribe((response: any) => {
       if (response.row_length > 0) {
         response.data.forEach((degree: any) => {
@@ -47,7 +62,13 @@ export class CategoryComponent implements OnInit {
         });
 
         this.profileService
-          .getProfilesPerCategoryId(this.categoryData.category_id)
+          .getProfilesPerCategoryId(
+            this.categoryData.category_id,
+            specialityId,
+            subSpecialityId,
+            communeId,
+            insuranceId
+          )
           .subscribe((response: any) => {
             if (response.row_length > 0) {
               this.profileData = response.data;
@@ -55,5 +76,45 @@ export class CategoryComponent implements OnInit {
           });
       }
     });
+  }
+
+  changeSpecialityEvent(id: number) {
+    this.specialityId = id;
+    this.getProfiles(
+      this.specialityId,
+      this.subSpecialityId,
+      this.communeId,
+      this.insuranceId
+    );
+  }
+
+  changeSubSpecialityEvent(id: number) {
+    this.subSpecialityId = id;
+    this.getProfiles(
+      this.specialityId,
+      this.subSpecialityId,
+      this.communeId,
+      this.insuranceId
+    );
+  }
+
+  changeCommuneEvent(id: number) {
+    this.communeId = id;
+    this.getProfiles(
+      this.specialityId,
+      this.subSpecialityId,
+      this.communeId,
+      this.insuranceId
+    );
+  }
+
+  changeInsuranceEvent(id: number) {
+    this.insuranceId = id;
+    this.getProfiles(
+      this.specialityId,
+      this.subSpecialityId,
+      this.communeId,
+      this.insuranceId
+    );
   }
 }

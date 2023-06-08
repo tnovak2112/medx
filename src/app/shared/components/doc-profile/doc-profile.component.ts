@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import {
   faLinkedin,
   faInstagram,
@@ -75,12 +76,10 @@ export class DocProfileComponent implements OnInit {
           .subscribe((response: any) => {
             if (response.row_length > 0) {
               this.consultData = response.data[0];
-              //console.log("CONSULT", this.consultData);
               this.insuranceService
                 .getInsurancePerIdConsult(this.consultData.id)
                 .subscribe((response: any) => {
                   if (response.row_length > 0) {
-                    //console.log("INSURANCE RELATION", response);
                     this.listInsuranceData.forEach((insurance) => {
                       response.data.forEach((insurance_relation: any) => {
                         if (insurance_relation.insurance_id === insurance.id) {
@@ -95,7 +94,6 @@ export class DocProfileComponent implements OnInit {
                 .subscribe((response: any) => {
                   if (response.row_length > 0) {
                     this.communeData = response.data[0];
-                    //console.log("COMMUNE", this.communeData);
                   }
                 });
             }
@@ -134,5 +132,13 @@ export class DocProfileComponent implements OnInit {
 
   redirectSocial(socialNetwork: string) {
     window.open(socialNetwork, "_blank");
+  }
+
+  sendWhatappUrl() {
+    const ulr = encodeURIComponent(`${location.href}`);
+    window.open(
+      `https://api.whatsapp.com/send/?text=${ulr}&type=custom_url&app_absent=0`,
+      "_blank"
+    );
   }
 }

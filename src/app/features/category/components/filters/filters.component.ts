@@ -1,10 +1,9 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { CommuneService } from "src/app/core/service/commune/commune.service";
 import { InsuranceService } from "src/app/core/service/insurance/insurance.service";
 import { DegreeService } from "src/app/core/service/degree/degree.service";
 import { SpecialityService } from "src/app/core/service/speciality/speciality.service";
 import { SubSpecialityService } from "src/app/core/service/sub-speciality/sub-speciality.service";
-
 @Component({
   selector: "app-filters",
   templateUrl: "./filters.component.html",
@@ -17,6 +16,11 @@ export class FiltersComponent implements OnInit {
   public subSpecialityExist: any;
   public subSpecialityData: any;
   @Input() degreeId: any;
+
+  @Output() changeSpeciality = new EventEmitter<any>();
+  @Output() changeSubSpeciality = new EventEmitter<any>();
+  @Output() changeCommune = new EventEmitter<any>();
+  @Output() changeInsurance = new EventEmitter<any>();
 
   constructor(
     private readonly communeServce: CommuneService,
@@ -56,9 +60,10 @@ export class FiltersComponent implements OnInit {
     });
   }
 
-  getSubSpeciality(speciality_id: number) {
+  clickSpeciality(id: number) {
+    this.changeSpeciality.emit(id);
     this.subSpecialityService
-      .getSubSpecialityPerSpecialityId(speciality_id)
+      .getSubSpecialityPerSpecialityId(id)
       .subscribe((response: any) => {
         if (response.row_length > 0) {
           this.subSpecialityExist = true;
@@ -67,5 +72,17 @@ export class FiltersComponent implements OnInit {
           this.subSpecialityExist = false;
         }
       });
+  }
+
+  clickSubSpeciality(id: number) {
+    this.changeSubSpeciality.emit(id);
+  }
+
+  clickCommune(id: number) {
+    this.changeCommune.emit(id);
+  }
+
+  clickInsurance(id: number) {
+    this.changeInsurance.emit(id);
   }
 }

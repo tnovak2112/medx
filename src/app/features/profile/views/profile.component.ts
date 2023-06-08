@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "src/app/core/service/auth/auth.service";
 import { ConstantService } from "src/app/core/service/constants/constants.service";
 import { ProfileService } from "src/app/core/service/profile/profile.service";
@@ -18,22 +18,33 @@ export class ProfileComponent implements OnInit {
   constructor(
     private readonly authService: AuthService,
     private readonly profileService: ProfileService,
-    private readonly constantService: ConstantService,
-    private readonly router: Router
+    //private readonly constantService: ConstantService,
+    private readonly router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    if (this.constantService.userId === undefined) {
-      this.router.navigate(["/home"]);
-    } else {
-      this.userId = this.constantService.userId;
-      this.profileService
-        .getProfile(this.constantService.userId)
-        .subscribe((response: any) => {
-          if (response.row_length > 0) {
-            this.profileExist = true;
-          }
-        });
-    }
+    this.route.params.subscribe((params) => {
+      //log the entire params object
+      this.userId = params["id"];
+      this.profileService.getProfile(this.userId).subscribe((response: any) => {
+        if (response.row_length > 0) {
+          this.profileExist = true;
+        }
+      });
+    });
+
+    // if (this.constantService.userId === undefined) {
+    //   this.router.navigate(["/home"]);
+    // } else {
+    //   this.userId = this.constantService.userId;
+    //   this.profileService
+    //     .getProfile(this.constantService.userId)
+    //     .subscribe((response: any) => {
+    //       if (response.row_length > 0) {
+    //         this.profileExist = true;
+    //       }
+    //     });
+    // }
   }
 }

@@ -16,8 +16,14 @@ export class ProfileService {
     return this.http.get<any>(url);
   }
 
-  getProfilesPerCategoryId(degree_id: number): Observable<any> {
-    const url = `${this.base}/perfil/obtenerPerfilesPorCategoria?degree_id=${degree_id}`;
+  getProfilesPerCategoryId(
+    degree_id: number,
+    specialityId: number,
+    subSpecialityId: number,
+    communeId: number,
+    insuranceId: number
+  ): Observable<any> {
+    const url = `${this.base}/perfil/obtenerPerfilesPorCategoria?degree_id=${degree_id}&specialityId=${specialityId}&subSpecialityId=${subSpecialityId}&communeId=${communeId}&insuranceId=${insuranceId}`;
     return this.http.get<any>(url);
   }
 

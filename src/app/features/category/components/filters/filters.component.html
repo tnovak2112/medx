@@ -12,11 +12,9 @@
         </button>
         <ul class="dropdown-menu">
           <li *ngFor="let speciality of specialityData">
-            <a
-              class="dropdown-item"
-              (click)="getSubSpeciality(speciality.id)"
-              >{{ speciality.name }}</a
-            >
+            <a class="dropdown-item" (click)="clickSpeciality(speciality.id)">{{
+              speciality.name
+            }}</a>
           </li>
         </ul>
       </div>
@@ -33,7 +31,11 @@
         </button>
         <ul class="dropdown-menu">
           <li *ngFor="let subSpeciality of subSpecialityData">
-            <a class="dropdown-item">{{ subSpeciality.name }}</a>
+            <a
+              class="dropdown-item"
+              (click)="clickSubSpeciality(subSpeciality.id)"
+              >{{ subSpeciality.name }}</a
+            >
           </li>
         </ul>
       </div>
@@ -50,7 +52,9 @@
         </button>
         <ul class="dropdown-menu">
           <li *ngFor="let commune of communesData">
-            <a class="dropdown-item">{{ commune.name }}</a>
+            <a class="dropdown-item" (click)="clickCommune(commune.id)">{{
+              commune.name
+            }}</a>
           </li>
         </ul>
       </div>
@@ -67,7 +71,9 @@
         </button>
         <ul class="dropdown-menu">
           <li *ngFor="let insurance of insuranceData">
-            <a class="dropdown-item">{{ insurance.name }}</a>
+            <a class="dropdown-item" (click)="clickInsurance(insurance.id)">{{
+              insurance.name
+            }}</a>
           </li>
         </ul>
       </div>

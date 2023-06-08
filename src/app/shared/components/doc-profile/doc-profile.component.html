@@ -22,34 +22,47 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-4 p-0 text-center">
-          <!--Boton compatir-->
-            <button type="button" class="w-100 my-2" id="share-btn">
+            <!--Boton compatir-->
+            <button
+              type="button"
+              class="w-100 my-2"
+              id="share-btn"
+              (click)="sendWhatappUrl()"
+            >
               <fa-icon [icon]="share" id="whatsapp-btn"></fa-icon>
-            </button>            
-          <!--Fin-->
+            </button>
+            <!--Fin-->
           </div>
           <div class="col-4 p-0 text-center">
-            <button type="button" class="w-100 my-2" id="linkedin-btn">
+            <button
+              type="button"
+              class="w-100 my-2"
+              id="linkedin-btn"
+              (click)="redirectSocial(profileData.linkedin)"
+            >
               <fa-icon
                 class="shadow-sm"
                 [icon]="linkedin"
                 id="linkedin-icon"
-                (click)="redirectSocial(profileData.linkedin)"
               ></fa-icon>
             </button>
           </div>
           <div class="col-4 p-0 text-center">
-            <button type="button" class="w-100 my-2" id="instagram-btn">
-              <fa-icon
-              class="shadow-sm"
-              [icon]="instagram"
-              id="instagram-icon"
+            <button
+              type="button"
+              class="w-100 my-2"
+              id="instagram-btn"
               (click)="redirectSocial(profileData.instagram)"
+            >
+              <fa-icon
+                class="shadow-sm"
+                [icon]="instagram"
+                id="instagram-icon"
               ></fa-icon>
             </button>
-          </div> 
-        </div> 
-      </div>                                               
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="col-lg-8 col-sm-12">

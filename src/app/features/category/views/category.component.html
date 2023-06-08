@@ -1,5 +1,11 @@
 <ng-container *ngIf="profileData">
-  <app-filters [degreeId]="degree_id"></app-filters>
+  <app-filters
+    [degreeId]="degree_id"
+    (changeSpeciality)="changeSpecialityEvent($event)"
+    (changeSubSpeciality)="changeSubSpecialityEvent($event)"
+    (changeCommune)="changeCommuneEvent($event)"
+    (changeInsurance)="changeInsuranceEvent($event)"
+  ></app-filters>
   <app-filters-display
     [profileData]="profileData"
     [categoryData]="categoryData"

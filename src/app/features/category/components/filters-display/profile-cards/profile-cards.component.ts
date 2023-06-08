@@ -15,14 +15,14 @@ export class ProfileCardsComponent implements OnInit {
   plus = faPlus;
 
   constructor(
-    private readonly constantService: ConstantService,
+    //private readonly constantService: ConstantService,
     private readonly router: Router
   ) {}
 
   ngOnInit() {}
 
   sendToProfileFunction(id: number) {
-    this.constantService.userId = id;
-    this.router.navigate(["/profile"]);
+    //this.constantService.userId = id;
+    this.router.navigate([`/profile/${id}`]);
   }
 }
