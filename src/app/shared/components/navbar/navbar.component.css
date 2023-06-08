@@ -2,7 +2,12 @@
     background-color: white;
 }
 #image-container{
-    max-width: 120px;
+    max-width: 100px;
+    height: auto;
+}
+#image-container img{
+    width: 100%;
+    object-fit: cover;
 }
 #login{
     padding: 12px 25px;
@@ -34,16 +39,16 @@
     background-color: rgba(0, 168, 120, .6);
 }
 fa-icon{
-    font-size: 15px;
+    font-size: 10px;
     margin-left: 5px;
-    color: white;
+    color: var(--blue);
 }
 a{
     color: var(--blue);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-weight: 700;
     font-family: Titulos;
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: color .5s;
     background-color: none;
     text-decoration: none;

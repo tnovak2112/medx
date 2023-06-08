@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 
 @Component({
   selector: "app-filters-display",
@@ -8,6 +9,9 @@ import { Component, Input, OnInit } from "@angular/core";
 export class FiltersDisplayComponent implements OnInit {
   @Input() profileData: any;
   @Input() categoryData: any;
+
+  deleteIcon = faTrashCan
+
 
   constructor() {}
 

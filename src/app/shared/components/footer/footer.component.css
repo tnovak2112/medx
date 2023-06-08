@@ -1,25 +1,32 @@
-
-.container-fluid{
-    background-color: var(--blue);
-    bottom: 0;
-    position: relative;
-    left: 0;
+footer{
     width: 100%;
+    max-height: 120px;
+    position: absolute;
+    bottom: 0px;
+    padding: 0px;
+    background-color: rgba(218, 226, 223, 0.5);
+    border-top: 0.5px groove rgba(218, 226, 223, 0.8);
 }
-.d-flex{
-    height: 120px;
+#footer-row{
+    padding: 20px 0px;
 }
-.icon-container{
-    width: 180px;
+#image-container{
+    max-width: 90px;
+    height: auto;
+    margin-left: 4em;
 }
-img{
-    width: 150px;
+#image-container img{
+    width: 100%;
+    object-fit: cover;
+}
+#icon-container{
+    margin-right: 4em;
 }
 fa-icon{
-    font-size: 26px;
-    color: var(--yellow);
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    color: var(--lightblue);
 }
-p{
-    color: var(--yellow);
-    padding: 0;
+a{
+    text-decoration: none;
 }
