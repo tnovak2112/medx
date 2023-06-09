@@ -17,7 +17,7 @@ button:hover{
 }
 strong{
     letter-spacing: 2px;
-    color: var(--lightblue);
+    color: grey;
 }
 h1{
     font-weight: 600;

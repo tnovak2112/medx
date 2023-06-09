@@ -1,4 +1,4 @@
-<div class="container rounded">
+<div class="container rounded" *ngIf="profileData.length > 0; else noResults">
   <div class="m-1 text-center p-2">
     <h5 class="pt-2">RESULTADOS:</h5>
     <!-- tag -->
@@ -38,3 +38,9 @@
     </nav>
   </div> -->
 </div>
+
+<ng-template #noResults>
+  <div class="m-1 text-center p-2">
+    <h5 class="pt-2">0 RESULTADOS:</h5>
+  </div>
+</ng-template>
