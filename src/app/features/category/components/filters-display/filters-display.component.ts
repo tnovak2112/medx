@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ["./filters-display.component.css"],
 })
 export class FiltersDisplayComponent implements OnInit {
-  @Input() profileData: any;
+  @Input() profileData: any = [];
   @Input() categoryData: any;
 
   constructor() {}
