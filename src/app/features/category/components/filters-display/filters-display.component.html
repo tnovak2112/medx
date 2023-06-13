@@ -6,8 +6,46 @@
     <h5 class="pt-2">RESULTADOS:</h5>
     <!-- tag -->
     <div class="w-100 text-center">
-      <button type="button" class="shadow-sm mt-2">
-        seleccion
+      <button
+        type="button"
+        class="shadow-sm mt-2"
+        *ngIf="speciality !== null"
+        (click)="eventRemoveSpeciality()"
+      >
+        {{ speciality.name }}
+        <span class="badge badge-light">
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="shadow-sm mt-2 margin-button"
+        *ngIf="subSpeciality !== null"
+        (click)="eventRemoveSubSpeciality()"
+      >
+        {{ subSpeciality.name }}
+        <span class="badge badge-light">
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="shadow-sm mt-2 margin-button"
+        *ngIf="commune !== null"
+        (click)="eventRemoveCommune()"
+      >
+        {{ commune.name }}
+        <span class="badge badge-light">
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="shadow-sm mt-2 margin-button"
+        *ngIf="insurance !== null"
+        (click)="eventRemoveInsurance()"
+      >
+        {{ insurance.name }}
         <span class="badge badge-light">
           <fa-icon [icon]="deleteIcon"></fa-icon>
         </span>
@@ -42,16 +80,53 @@
   </div> -->
 </div>
 
-<<<<<<< HEAD
 <ng-template #sinResultados>
   <div class="m-1 text-center p-2">
     <h5 class="pt-2">0 RESULTADOS:</h5>
-  </div></ng-template
->
-=======
-<ng-template #noResults>
-  <div class="m-1 text-center p-2">
-    <h5 class="pt-2">0 RESULTADOS:</h5>
-  </div>
-</ng-template>
->>>>>>> origin/feature/arreglos-estilos
+    <div class="w-100 text-center">
+      <button
+        type="button"
+        class="shadow-sm mt-2"
+        *ngIf="speciality !== null"
+        (click)="eventRemoveSpeciality()"
+      >
+        {{ speciality.name }}
+        <span class="badge badge-light">
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="shadow-sm mt-2 margin-button"
+        *ngIf="subSpeciality !== null"
+        (click)="eventRemoveSubSpeciality()"
+      >
+        {{ subSpeciality.name }}
+        <span class="badge badge-light">
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="shadow-sm mt-2 margin-button"
+        *ngIf="commune !== null"
+        (click)="eventRemoveCommune()"
+      >
+        {{ commune.name }}
+        <span class="badge badge-light">
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="shadow-sm mt-2 margin-button"
+        *ngIf="insurance !== null"
+        (click)="eventRemoveInsurance()"
+      >
+        {{ insurance.name }}
+        <span class="badge badge-light">
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </span>
+      </button>
+    </div></div
+></ng-template>

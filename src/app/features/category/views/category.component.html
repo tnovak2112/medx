@@ -9,5 +9,13 @@
   <app-filters-display
     [profileData]="profileData"
     [categoryData]="categoryData"
+    [speciality]="speciality"
+    [subSpeciality]="subSpeciality"
+    [commune]="commune"
+    [insurance]="insurance"
+    (removeSpeciality)="removeSpecialityEvent($event)"
+    (removeSubSpeciality)="removeSubSpecialityEvent($event)"
+    (removeCommune)="removeCommuneEvent($event)"
+    (removeInsurance)="removeInsuranceEvent($event)"
   ></app-filters-display>
 </ng-container>

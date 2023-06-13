@@ -20,6 +20,11 @@ export class CategoryComponent implements OnInit {
   communeId: any = 0;
   insuranceId: any = 0;
 
+  speciality: any = null;
+  subSpeciality: any = null;
+  commune: any = null;
+  insurance: any = null;
+
   constructor(
     private readonly activeRoute: ActivatedRoute,
     private readonly profileService: ProfileService,
@@ -78,8 +83,9 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-  changeSpecialityEvent(id: number) {
-    this.specialityId = id;
+  changeSpecialityEvent(speciality: any) {
+    this.specialityId = speciality.id;
+    this.speciality = speciality;
     this.getProfiles(
       this.specialityId,
       this.subSpecialityId,
@@ -88,8 +94,9 @@ export class CategoryComponent implements OnInit {
     );
   }
 
-  changeSubSpecialityEvent(id: number) {
-    this.subSpecialityId = id;
+  changeSubSpecialityEvent(subSpeciality: any) {
+    this.subSpecialityId = subSpeciality.id;
+    this.subSpeciality = subSpeciality;
     this.getProfiles(
       this.specialityId,
       this.subSpecialityId,
@@ -98,8 +105,9 @@ export class CategoryComponent implements OnInit {
     );
   }
 
-  changeCommuneEvent(id: number) {
-    this.communeId = id;
+  changeCommuneEvent(commune: any) {
+    this.communeId = commune.id;
+    this.commune = commune;
     this.getProfiles(
       this.specialityId,
       this.subSpecialityId,
@@ -108,13 +116,45 @@ export class CategoryComponent implements OnInit {
     );
   }
 
-  changeInsuranceEvent(id: number) {
-    this.insuranceId = id;
+  changeInsuranceEvent(insurance: any) {
+    this.insuranceId = insurance.id;
+    this.insurance = insurance;
     this.getProfiles(
       this.specialityId,
       this.subSpecialityId,
       this.communeId,
       this.insuranceId
     );
+  }
+
+  removeSpecialityEvent(speciality: any) {
+    this.getProfiles(0, 0, this.communeId, this.insuranceId);
+    this.speciality = null;
+    this.subSpeciality = null;
+  }
+
+  removeSubSpecialityEvent(subSpeciality: any) {
+    this.getProfiles(this.specialityId, 0, this.communeId, this.insuranceId);
+    this.subSpeciality = null;
+  }
+
+  removeCommuneEvent(commune: any) {
+    this.getProfiles(
+      this.specialityId,
+      this.subSpecialityId,
+      0,
+      this.insuranceId
+    );
+    this.commune = null;
+  }
+
+  removeInsuranceEvent(insurance: any) {
+    this.getProfiles(
+      this.specialityId,
+      this.subSpecialityId,
+      this.communeId,
+      0
+    );
+    this.insurance = null;
   }
 }

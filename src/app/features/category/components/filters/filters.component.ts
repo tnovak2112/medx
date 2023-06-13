@@ -60,10 +60,10 @@ export class FiltersComponent implements OnInit {
     });
   }
 
-  clickSpeciality(id: number) {
-    this.changeSpeciality.emit(id);
+  clickSpeciality(speciality: any) {
+    this.changeSpeciality.emit(speciality);
     this.subSpecialityService
-      .getSubSpecialityPerSpecialityId(id)
+      .getSubSpecialityPerSpecialityId(speciality.id)
       .subscribe((response: any) => {
         if (response.row_length > 0) {
           this.subSpecialityExist = true;
@@ -74,15 +74,15 @@ export class FiltersComponent implements OnInit {
       });
   }
 
-  clickSubSpeciality(id: number) {
-    this.changeSubSpeciality.emit(id);
+  clickSubSpeciality(subSpeciality: any) {
+    this.changeSubSpeciality.emit(subSpeciality);
   }
 
-  clickCommune(id: number) {
-    this.changeCommune.emit(id);
+  clickCommune(commune: any) {
+    this.changeCommune.emit(commune);
   }
 
-  clickInsurance(id: number) {
-    this.changeInsurance.emit(id);
+  clickInsurance(insurance: any) {
+    this.changeInsurance.emit(insurance);
   }
 }
