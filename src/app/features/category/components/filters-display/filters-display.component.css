@@ -9,3 +9,15 @@ h5{
     font-size: 1rem;
     color: rgba(14, 17, 22, 0.9);
 }
+button{
+    background-color: rgba(218, 226, 223, 0.4);
+    color: grey;
+    font-size: .8rem;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 10px;
+}
+fa-icon{
+    color: grey;
+    font-size: .8rem;
+}

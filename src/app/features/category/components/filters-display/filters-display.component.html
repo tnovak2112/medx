@@ -4,8 +4,18 @@
 >
   <div class="m-1 text-center p-2">
     <h5 class="pt-2">RESULTADOS:</h5>
+    <!-- tag -->
+    <div class="w-100 text-center">
+      <button type="button" class="shadow-sm mt-2">
+        seleccion
+        <span class="badge badge-light">
+          <fa-icon [icon]="deleteIcon"></fa-icon>
+        </span>
+      </button>
+    </div>
+    <!-- fin tag -->
   </div>
-  <div class="row row-cols-auto justify-content-center p-5">
+  <div class="row row-cols-auto justify-content-center p-2">
     <div class="col" *ngFor="let profile of profileData">
       <app-profile-cards
         [profile]="profile"
@@ -32,8 +42,16 @@
   </div> -->
 </div>
 
+<<<<<<< HEAD
 <ng-template #sinResultados>
   <div class="m-1 text-center p-2">
     <h5 class="pt-2">0 RESULTADOS:</h5>
   </div></ng-template
 >
+=======
+<ng-template #noResults>
+  <div class="m-1 text-center p-2">
+    <h5 class="pt-2">0 RESULTADOS:</h5>
+  </div>
+</ng-template>
+>>>>>>> origin/feature/arreglos-estilos

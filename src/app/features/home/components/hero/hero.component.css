@@ -11,13 +11,18 @@ button{
     font-weight: 500;
     letter-spacing: 1px;
     transition: background-color .5s;
+    transition: color .5s;
 }
 button:hover{
-    background-color:rgba(0, 168, 120, 0.7);
+    background-color: var(--purpleO);
+    color: var(--blue);
+}
+#text{
+  color: var(--purple);
 }
 strong{
     letter-spacing: 2px;
-    color: var(--lightblue);
+    color: grey;
 }
 h1{
     font-weight: 600;
@@ -29,6 +34,7 @@ h1{
 h5{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 1px;
+    font-size: 1rem;
 }
 fa-icon{
     font-size: 3rem;

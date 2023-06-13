@@ -1,10 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    height: 100vh;
+}
 body{
+    min-height: 100vh;
     background-color: white;
     overflow-x: hidden; /* Hide horizontal scrollbar */;
-    margin: 0; 
+    margin-bottom: 0px; 
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    
+    padding-bottom: 120px;
+    position: relative;
 }
 @font-face {
     font-family: Titulos;
@@ -20,8 +25,6 @@ body{
     --purple: #77037B; 
     --purpleO: rgba(119,3,123,0.2);
 }
-html, 
-body { 
-    height: 100%; 
-}
+
+
 
