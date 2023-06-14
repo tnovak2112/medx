@@ -33,7 +33,7 @@
             </button>
             <!--Fin-->
           </div>
-          <div class="col-4 p-0 text-center">
+          <div class="col-4 p-0 text-center" *ngIf="profileData.linkedin">
             <button
               type="button"
               class="w-100 my-2"
@@ -47,7 +47,7 @@
               ></fa-icon>
             </button>
           </div>
-          <div class="col-4 p-0 text-center">
+          <div class="col-4 p-0 text-center" *ngIf="profileData.instagram">
             <button
               type="button"
               class="w-100 my-2"
@@ -166,7 +166,10 @@
                   <h3>{{ degreeData.name }}</h3>
                 </div>
               </div>
-              <div class="d-flex mt-4 align-items-center">
+              <div
+                class="d-flex mt-4 align-items-center"
+                *ngIf="specialitiesData"
+              >
                 <fa-icon [icon]="graduate" class="ps-4"></fa-icon>
                 <h6 class="ps-4 mb-0">Especialidades:</h6>
               </div>
@@ -179,9 +182,12 @@
                   {{ speciality.name }}
                 </h6>
               </div>
-              <div class="d-flex mt-4 align-items-center">
+              <div
+                class="d-flex mt-4 align-items-center"
+                *ngIf="subSpecialitiesData"
+              >
                 <fa-icon [icon]="graduate" class="ps-4"></fa-icon>
-                <h6 class="ps-4 mb-0">Cursos y otros estudios:</h6>
+                <h6 class="ps-4 mb-0">Sub Especialidades:</h6>
               </div>
               <div
                 class="d-flex mt-2 align-items-center"
@@ -190,6 +196,22 @@
                 <fa-icon [icon]="arrow" class="ps-5"></fa-icon>
                 <h6 class="ps-4 mb-0">
                   {{ subSpeciality.name }}
+                </h6>
+              </div>
+              <div
+                class="d-flex mt-4 align-items-center"
+                *ngIf="profileData.other_studies"
+              >
+                <fa-icon [icon]="graduate" class="ps-4"></fa-icon>
+                <h6 class="ps-4 mb-0">Cursos y otros estudios:</h6>
+              </div>
+              <div
+                class="d-flex mt-2 align-items-center"
+                *ngIf="profileData.other_studies"
+              >
+                <fa-icon [icon]="arrow" class="ps-5"></fa-icon>
+                <h6 class="ps-4 mb-0">
+                  {{ profileData.other_studies }}
                 </h6>
               </div>
             </div>
