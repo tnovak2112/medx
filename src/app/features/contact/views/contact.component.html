@@ -31,43 +31,68 @@
       </div>
     </div>
     <div class="col-lg-9 col-sm-12 p-5 shadow" id="yellow-bg">
-      <div class="row">
-        <h3>Escríbenos</h3>
-        <p id="subtitle">Tus comentarios son muy importantes para nosotros!</p>
-        <div class="col-lg-6 col-sm-12 p-3">
-          <form>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmitContact()">
+        <div class="row">
+          <h3>Escríbenos</h3>
+          <p id="subtitle">
+            Tus comentarios son muy importantes para nosotros!
+          </p>
+          <div class="col-lg-6 col-sm-12 p-3">
             <div class="mb-3">
               <label for="nameInput" class="form-label">Nombre</label>
-              <input type="email" class="form-control" id="nameInput" />
+              <input
+                type="email"
+                class="form-control"
+                id="nameInput"
+                formControlName="name"
+              />
             </div>
             <div class="mb-3">
               <label for="numberInput" class="form-label">Telefono</label>
-              <input type="text" class="form-control" id="numberInput" />
+              <input
+                type="text"
+                class="form-control"
+                id="numberInput"
+                formControlName="phone"
+              />
             </div>
-          </form>
-        </div>
-        <div class="col-lg-6 col-sm-12 p-3">
-          <form>
+          </div>
+          <div class="col-lg-6 col-sm-12 p-3">
             <div class="mb-3">
               <label for="lastNameInput" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="lastNameInput" />
+              <input
+                type="text"
+                class="form-control"
+                id="lastNameInput"
+                formControlName="lastname"
+              />
             </div>
             <div class="mb-3">
               <label for="mailInput" class="form-label"
                 >Correo Electrónico</label
               >
-              <input type="email" class="form-control" id="mailInput" />
+              <input
+                type="email"
+                class="form-control"
+                id="mailInput"
+                formControlName="email"
+              />
             </div>
-          </form>
+          </div>
+          <div class="mb-3">
+            <label for="msjInput" class="form-label">Mensaje</label>
+            <textarea
+              class="form-control"
+              id="msjInput"
+              rows="5"
+              formControlName="message"
+            ></textarea>
+          </div>
+          <div class="text-center mt-4">
+            <button type="submit" class="w-50 shadow">ENVIAR</button>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="msjInput" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="msjInput" rows="5"></textarea>
-        </div>
-        <div class="text-center mt-4">
-          <button type="submit" class="w-50 shadow">ENVIAR</button>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

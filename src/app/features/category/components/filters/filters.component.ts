@@ -22,6 +22,9 @@ export class FiltersComponent implements OnInit {
   @Output() changeCommune = new EventEmitter<any>();
   @Output() changeInsurance = new EventEmitter<any>();
 
+  selectedComune: any;
+  filterOptions: any = [];
+
   constructor(
     private readonly communeServce: CommuneService,
     private readonly insuranceService: InsuranceService,
@@ -34,6 +37,7 @@ export class FiltersComponent implements OnInit {
     this.communeServce.getCommunes().subscribe((response: any) => {
       if (response.row_length > 0) {
         this.communesData = response.data;
+        this.filterOptions = response.data;
       }
     });
 
@@ -58,6 +62,13 @@ export class FiltersComponent implements OnInit {
         });
       }
     });
+  }
+
+  filterUsers() {
+    this.filterOptions = this.communesData.filter((item: any) =>
+      item.name.toLowerCase().includes(this.selectedComune.toLowerCase())
+    );
+    console.log(this.filterOptions);
   }
 
   clickSpeciality(speciality: any) {

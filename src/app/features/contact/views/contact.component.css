@@ -37,7 +37,7 @@ button{
 button:hover{
     background-color: var(--yellow);
     color: var(--blue);
-    border: 0.5px solid var(--blue);
+    border: none;
 }
 #yellow-bg{
     background-color: rgba(218, 226, 223, 0.5);

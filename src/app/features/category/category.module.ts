@@ -6,6 +6,7 @@ import { CategoryComponent } from "./views/category.component";
 import { FiltersComponent } from "./components/filters/filters.component";
 import { FiltersDisplayComponent } from "./components/filters-display/filters-display.component";
 import { ProfileCardsComponent } from "./components/filters-display/profile-cards/profile-cards.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,11 @@ import { ProfileCardsComponent } from "./components/filters-display/profile-card
     FiltersDisplayComponent,
     ProfileCardsComponent,
   ],
-  imports: [CommonModule, CategoryRoutingModule, FontAwesomeModule],
+  imports: [
+    CommonModule,
+    CategoryRoutingModule,
+    FontAwesomeModule,
+    FormsModule,
+  ],
 })
 export class CategoryModule {}
