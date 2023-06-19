@@ -1,3 +1,6 @@
+#container{
+    padding: 40px;
+}
 h1{
     font-family: Titulos;
 }
@@ -41,6 +44,7 @@ button:hover{
 }
 #yellow-bg{
     background-color: rgba(218, 226, 223, 0.5);
+    padding: 40px;
 }
 #subtitle{
     font-family: Titulos;
@@ -49,3 +53,18 @@ button:hover{
     font-size: 1.1rem;
     font-weight: 700;
 }
+@media (max-width: 576px) {
+    #yellow-bg {
+      padding: 15px 5px;
+    }
+    #container{
+        padding: 10px 5px;
+        margin-top: 20px;
+    }
+    button{
+        font-size: .5rem;
+    }
+    label{
+        font-size: .8rem;
+    }
+  }
