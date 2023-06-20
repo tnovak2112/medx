@@ -28,7 +28,7 @@ import { SubSpecialityService } from "src/app/core/service/sub-speciality/sub-sp
   styleUrls: ["./doc-profile.component.css"],
 })
 export class DocProfileComponent implements OnInit {
-  @Input() userId: any;
+  @Input() user_uuid: any;
   public profileData: any;
   public consultData: any;
   public listInsuranceData: any[] = [];
@@ -68,66 +68,70 @@ export class DocProfileComponent implements OnInit {
       }
     });
 
-    this.profileService.getProfile(this.userId).subscribe((response: any) => {
-      if (response.row_length > 0) {
-        this.profileData = response.data[0];
-        this.consultService
-          .getConsult(this.profileData.consult_id)
-          .subscribe((response: any) => {
-            if (response.row_length > 0) {
-              this.consultData = response.data[0];
-              this.insuranceService
-                .getInsurancePerIdConsult(this.consultData.id)
-                .subscribe((response: any) => {
-                  if (response.row_length > 0) {
-                    this.listInsuranceData.forEach((insurance) => {
-                      response.data.forEach((insurance_relation: any) => {
-                        if (insurance_relation.insurance_id === insurance.id) {
-                          insurance.checked = true;
-                        }
+    this.profileService
+      .getProfile(this.user_uuid)
+      .subscribe((response: any) => {
+        if (response.row_length > 0) {
+          this.profileData = response.data[0];
+          this.consultService
+            .getConsult(this.profileData.consult_id)
+            .subscribe((response: any) => {
+              if (response.row_length > 0) {
+                this.consultData = response.data[0];
+                this.insuranceService
+                  .getInsurancePerIdConsult(this.consultData.id)
+                  .subscribe((response: any) => {
+                    if (response.row_length > 0) {
+                      this.listInsuranceData.forEach((insurance) => {
+                        response.data.forEach((insurance_relation: any) => {
+                          if (
+                            insurance_relation.insurance_id === insurance.id
+                          ) {
+                            insurance.checked = true;
+                          }
+                        });
                       });
-                    });
-                  }
-                });
-              this.communeService
-                .getCommunePerId(this.consultData.commune_id)
-                .subscribe((response: any) => {
-                  if (response.row_length > 0) {
-                    this.communeData = response.data[0];
-                  }
-                });
-            }
-          });
+                    }
+                  });
+                this.communeService
+                  .getCommunePerId(this.consultData.commune_id)
+                  .subscribe((response: any) => {
+                    if (response.row_length > 0) {
+                      this.communeData = response.data[0];
+                    }
+                  });
+              }
+            });
 
-        this.categoryService
-          .getCategoryPerProfileId(this.profileData.id)
-          .subscribe((response: any) => {
-            if (response.row_length > 0) {
-              this.degreeService
-                .getDegreePerCategoryId(response.data[0].category_id)
-                .subscribe((response: any) => {
-                  this.degreeData = response.data[0];
-                });
-            }
-          });
+          this.categoryService
+            .getCategoryPerProfileId(this.profileData.id)
+            .subscribe((response: any) => {
+              if (response.row_length > 0) {
+                this.degreeService
+                  .getDegreePerCategoryId(response.data[0].category_id)
+                  .subscribe((response: any) => {
+                    this.degreeData = response.data[0];
+                  });
+              }
+            });
 
-        this.specialityService
-          .getSpecialityPerProfileId(this.profileData.id)
-          .subscribe((response: any) => {
-            if (response.row_length > 0) {
-              this.specialitiesData = response.data;
-            }
-          });
+          this.specialityService
+            .getSpecialityPerProfileId(this.profileData.id)
+            .subscribe((response: any) => {
+              if (response.row_length > 0) {
+                this.specialitiesData = response.data;
+              }
+            });
 
-        this.subSpecialityService
-          .getSubSpecialityPerProfileId(this.profileData.id)
-          .subscribe((response: any) => {
-            if (response.row_length > 0) {
-              this.subSpecialitiesData = response.data;
-            }
-          });
-      }
-    });
+          this.subSpecialityService
+            .getSubSpecialityPerProfileId(this.profileData.id)
+            .subscribe((response: any) => {
+              if (response.row_length > 0) {
+                this.subSpecialitiesData = response.data;
+              }
+            });
+        }
+      });
   }
 
   redirectSocial(socialNetwork: string) {

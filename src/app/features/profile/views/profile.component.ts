@@ -13,7 +13,7 @@ import { ProfileService } from "src/app/core/service/profile/profile.service";
 export class ProfileComponent implements OnInit {
   //loginForm: FormGroup = loginForm();
   public profileExist: boolean = false;
-  public userId: any;
+  public user_uuid: any;
 
   constructor(
     private readonly authService: AuthService,
@@ -26,12 +26,14 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       //log the entire params object
-      this.userId = params["id"];
-      this.profileService.getProfile(this.userId).subscribe((response: any) => {
-        if (response.row_length > 0) {
-          this.profileExist = true;
-        }
-      });
+      this.user_uuid = params["id"];
+      this.profileService
+        .getProfile(this.user_uuid)
+        .subscribe((response: any) => {
+          if (response.row_length > 0) {
+            this.profileExist = true;
+          }
+        });
     });
 
     // if (this.constantService.userId === undefined) {

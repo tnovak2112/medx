@@ -1,8 +1,6 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { ConstantService } from "src/app/core/service/constants/constants.service";
 import { ProfileService } from "src/app/core/service/profile/profile.service";
 
 @Component({
@@ -20,7 +18,6 @@ export class HeroComponent implements OnInit {
 
   constructor(
     private readonly profileService: ProfileService,
-    private readonly constantService: ConstantService,
     private readonly router: Router
   ) {}
 
@@ -58,8 +55,9 @@ export class HeroComponent implements OnInit {
     }
   }
 
-  showProfileFunction(userId: any) {
-    this.constantService.userId = userId;
-    this.router.navigate(["/profile"]);
+  showProfileFunction(profile: any) {
+    this.router.navigate([
+      `/profile/${profile.user_uuid}/${profile.first_name}${profile.last_name}`,
+    ]);
   }
 }

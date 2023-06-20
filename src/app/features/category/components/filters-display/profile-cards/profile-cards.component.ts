@@ -21,8 +21,10 @@ export class ProfileCardsComponent implements OnInit {
 
   ngOnInit() {}
 
-  sendToProfileFunction(id: number) {
+  sendToProfileFunction(profile: any) {
     //this.constantService.userId = id;
-    this.router.navigate([`/profile/${id}`]);
+    this.router.navigate([
+      `/profile/${profile.user_uuid}/${profile.first_name}${profile.last_name}`,
+    ]);
   }
 }
