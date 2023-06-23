@@ -66,6 +66,15 @@ const routes: Routes = [
     canActivate: [],
     pathMatch: "full",
   },
+  {
+    path: "medical-center/:id/:name",
+    loadChildren: () =>
+      import("./features/medical-center/medical-center.module").then(
+        (m) => m.MedicalCenterModule
+      ),
+    // canActivate: [AuthGuard],
+    pathMatch: "full",
+  },
 ];
 
 @NgModule({
