@@ -27,6 +27,11 @@ export class ProfileService {
     return this.http.get<any>(url);
   }
 
+  getProfilesPerMedicalCenterId(uuid: any): Observable<any> {
+    const url = `${this.base}/perfil/obtenerPerfilesPorCentroMedico?uuid=${uuid}`;
+    return this.http.get<any>(url);
+  }
+
   getALlProfiles(user_name: string): Observable<any> {
     const url = `${this.base}/perfil/obtenerPerfilesPorCoincidencia?user_name=${user_name}`;
     return this.http.get<any>(url);

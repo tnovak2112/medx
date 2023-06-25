@@ -1,97 +1,95 @@
-<div class="container p-3">
-    <div class="row p-3 m-1 justify-content-center">
-        <div class="col-lg-6 col-md-12 col-sm-12 p-3">
-            <div class="row justify-content-center">
-                <div class="col-10 d-flex justify-content-center">
-                    <div id="img-container">
-                        <img class="shadow-sm img-fluid" src="assets/images/Recepcioncarrera.jpeg" alt="Company Logo">
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center my-3">
-                    <button class="mx-1 shadow-sm"><fa-icon [icon]="shareIcon"></fa-icon></button>
-                    <button class="mx-1 shadow-sm"><p>Sitio Web</p></button>
-                </div>
-            </div>
+<div class="container p-3" *ngIf="medicalCenterData !== undefined">
+  <div class="row p-3 m-1 justify-content-center">
+    <div class="col-lg-6 col-md-12 col-sm-12 p-3">
+      <div class="row justify-content-center">
+        <div class="col-10 d-flex justify-content-center">
+          <div id="img-container">
+            <img
+              class="shadow-sm img-fluid"
+              src="{{ medicalCenterData.image }}"
+              alt="Company Logo"
+            />
+          </div>
         </div>
-        <div class="col-6 p-3 mb-3">
-            <div class="row justify-content-center">
-                <div class="col-10 d-flex justify-content-between">
-                    <div class="d-flex flex-column">
-                        <h5>Clínica</h5>
-                        <h4>Tresdent SpA</h4>
-                        <br>
-                        <div class="d-flex align-items-center">
-                            <fa-icon [icon]="locationIcon"></fa-icon>
-                            <p id="icon-text" class="mx-3">Los Carrera #1145 Of 9.</p>
-                        </div>
-                        <div class="d-flex align-items-center mt-2">
-                            <fa-icon [icon]="phoneIcon"></fa-icon>
-                            <p id="icon-text" class="mx-3">(64) 221 0474</p>
-                        </div>
-                        <div class="d-flex align-items-center mt-2">
-                            <fa-icon [icon]="whatsappIcon"></fa-icon>
-                            <p id="icon-text" class="mx-3">(64) 221 0474</p>
-                        </div>
-                        <div class="d-flex align-items-center mt-2">
-                            <fa-icon [icon]="linkIcon"></fa-icon>
-                            <p id="icon-text" class="mx-3">https://www.tresdent.cl/</p>
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column" id="logo-container">
-                        <img src="assets/images/4fb_logo_tresdent_square.jpeg" alt="">
-                    </div>                    
-                </div>
-            </div>
+        <div class="d-flex justify-content-center my-3">
+          <button class="mx-1 shadow-sm" (click)="sendWhatappUrl()">
+            <fa-icon [icon]="shareIcon"></fa-icon>
+          </button>
+          <button class="mx-1 shadow-sm" (click)="sendWebUrl()">
+            <p>Sitio Web</p>
+          </button>
         </div>
-        <hr class="m-4">
-        <h5>Sobre nosostros:</h5>
-        <p align="justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde, dicta! Maiores quasi quam dolorem possimus natus ab voluptates id amet delectus totam est officiis fugiat eveniet corrupti perspiciatis, sunt facere sapiente numquam sint et optio. Architecto sunt dolor nesciunt, cumque eum, qui assumenda reprehenderit voluptate nisi blanditiis maiores quis ea, minus ipsa. Culpa error recusandae reprehenderit autem eaque possimus deleniti eum, animi dignissimos doloribus earum non quaerat pariatur. Aspernatur incidunt reiciendis, officiis asperiores at quas unde inventore facere similique dolor fugiat, eligendi ut officia laborum delectus ab dolore necessitatibus voluptatum maiores. Facilis, sunt provident beatae sit dolor maxime vel saepe ipsa necessitatibus corrupti ab sequi vitae nemo accusamus eos ipsum! Amet, veniam. Ipsam magnam nemo asperiores, sapiente perferendis itaque. Voluptatum!</p>
+      </div>
     </div>
-    <div class="row p-3 m-1 justify-content-center">
-        <h5>Nuestro equipo:</h5>
-        <div id="table-container" class="mt-2">
-            <table class="table">
-                <tbody>                    
-                    <tr>
-                        <th>
-                            <div id="photo-container">
-                                <img src="assets/images/mabri2.png" alt="photo">
-                            </div>
-                        </th>
-                        <td id="full-name">
-                            <p>Mauricio Trejo Soto</p>
-                        </td>
-                        <td id="age">
-                            <p>37 años</p>
-                        </td>
-                        <td id="category">
-                            <a href="">Cirujano Dentista</a>
-                        </td>
-                        <td>
-                            <button class="btn" id="table-btn"><p>Ver</p></button>                        
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <div id="photo-container">
-                                <img src="assets/images/tiojuanca.png" alt="photo">
-                            </div>
-                        </th>
-                        <td id="full-name">
-                            <p>Juan Carlos Trejo Gavilan</p>
-                        </td>
-                        <td id="age">
-                            <p>68 años</p>
-                        </td>
-                        <td id="category">
-                            <a href="">Cirujano Dentista</a>
-                        </td>
-                        <td>
-                            <button class="btn" id="table-btn"><p>Ver</p></button>                        
-                        </td>
-                    </tr>                
-                </tbody>
-            </table>
+    <div class="col-6 p-3 mb-3">
+      <div class="row justify-content-center">
+        <div class="col-10 d-flex justify-content-between">
+          <div class="d-flex flex-column">
+            <h5>{{ medicalCenterData.medical_center_type_name }}</h5>
+            <h4>{{ medicalCenterData.name }}</h4>
+            <br />
+            <div class="d-flex align-items-center">
+              <fa-icon [icon]="locationIcon"></fa-icon>
+              <p id="icon-text" class="mx-3">{{ medicalCenterData.address }}</p>
+            </div>
+            <div class="d-flex align-items-center mt-2">
+              <fa-icon [icon]="phoneIcon"></fa-icon>
+              <p id="icon-text" class="mx-3">{{ medicalCenterData.phone_1 }}</p>
+            </div>
+            <div class="d-flex align-items-center mt-2">
+              <fa-icon [icon]="whatsappIcon"></fa-icon>
+              <p id="icon-text" class="mx-3">{{ medicalCenterData.phone_2 }}</p>
+            </div>
+            <div class="d-flex align-items-center mt-2">
+              <fa-icon [icon]="linkIcon"></fa-icon>
+              <p id="icon-text" class="mx-3">{{ medicalCenterData.url }}</p>
+            </div>
+          </div>
+          <div class="d-flex flex-column" id="logo-container">
+            <img src="{{ medicalCenterData.image_logo }}" alt="" />
+          </div>
         </div>
+      </div>
     </div>
+    <hr class="m-4" />
+    <h5>Sobre nosostros:</h5>
+    <p align="justify">{{ medicalCenterData.description }}</p>
+  </div>
+  <div class="row p-3 m-1 justify-content-center">
+    <h5>Nuestro equipo:</h5>
+    <div id="table-container" class="mt-2">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let person of medicalCenterPersons">
+            <th>
+              <div id="photo-container">
+                <img src="{{ person.profile_photo }}" alt="photo" />
+              </div>
+            </th>
+            <td id="full-name">
+              <p>
+                {{ person.first_name }} {{ person.last_name }}
+                {{ person.second_lastname }}
+              </p>
+            </td>
+            <td id="age">
+              <p>{{ calcularEdad(person.birth_date) }}</p>
+            </td>
+            <td id="category">
+              <a href="">{{ person.degree_name }}</a>
+            </td>
+            <td>
+              <button
+                class="btn"
+                id="table-btn"
+                (click)="sendToProfileFunction(person)"
+              >
+                <p>Ver</p>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

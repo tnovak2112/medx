@@ -11,15 +11,11 @@ import { ProfileService } from "src/app/core/service/profile/profile.service";
   styleUrls: ["./profile.component.css"],
 })
 export class ProfileComponent implements OnInit {
-  //loginForm: FormGroup = loginForm();
   public profileExist: boolean = false;
   public user_uuid: any;
 
   constructor(
-    private readonly authService: AuthService,
     private readonly profileService: ProfileService,
-    //private readonly constantService: ConstantService,
-    private readonly router: Router,
     private route: ActivatedRoute
   ) {}
 
@@ -35,18 +31,5 @@ export class ProfileComponent implements OnInit {
           }
         });
     });
-
-    // if (this.constantService.userId === undefined) {
-    //   this.router.navigate(["/home"]);
-    // } else {
-    //   this.userId = this.constantService.userId;
-    //   this.profileService
-    //     .getProfile(this.constantService.userId)
-    //     .subscribe((response: any) => {
-    //       if (response.row_length > 0) {
-    //         this.profileExist = true;
-    //       }
-    //     });
-    // }
   }
 }

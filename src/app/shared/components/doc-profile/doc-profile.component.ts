@@ -12,12 +12,14 @@ import {
   faEnvelope,
   faUserGraduate,
   faShareNodes,
+  faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { CategoryService } from "src/app/core/service/category/category.service";
 import { CommuneService } from "src/app/core/service/commune/commune.service";
 import { ConsultService } from "src/app/core/service/consult/consult.service";
 import { DegreeService } from "src/app/core/service/degree/degree.service";
 import { InsuranceService } from "src/app/core/service/insurance/insurance.service";
+import { MedicalCenterService } from "src/app/core/service/medical-center/medical-center.service";
 import { ProfileService } from "src/app/core/service/profile/profile.service";
 import { SpecialityService } from "src/app/core/service/speciality/speciality.service";
 import { SubSpecialityService } from "src/app/core/service/sub-speciality/sub-speciality.service";
@@ -36,6 +38,7 @@ export class DocProfileComponent implements OnInit {
   public degreeData: any;
   public specialitiesData: any;
   public subSpecialitiesData: any;
+  public medicalCenterData: any;
 
   linkedin = faLinkedin;
   instagram = faInstagram;
@@ -47,6 +50,8 @@ export class DocProfileComponent implements OnInit {
   graduate = faUserGraduate;
   share = faShareNodes;
 
+  faArrowUpRight = faArrowUpRightFromSquare;
+
   constructor(
     private readonly profileService: ProfileService,
     private readonly insuranceService: InsuranceService,
@@ -55,7 +60,9 @@ export class DocProfileComponent implements OnInit {
     private readonly categoryService: CategoryService,
     private readonly degreeService: DegreeService,
     private readonly specialityService: SpecialityService,
-    private readonly subSpecialityService: SubSpecialityService
+    private readonly subSpecialityService: SubSpecialityService,
+    private readonly medicalCenterService: MedicalCenterService,
+    private readonly router: Router
   ) {}
 
   ngOnInit() {
@@ -103,6 +110,14 @@ export class DocProfileComponent implements OnInit {
               }
             });
 
+          this.medicalCenterService
+            .getMedicalCenter(this.profileData.medical_center_uuid)
+            .subscribe((response: any) => {
+              if (response.row_length > 0) {
+                this.medicalCenterData = response.data[0];
+              }
+            });
+
           this.categoryService
             .getCategoryPerProfileId(this.profileData.id)
             .subscribe((response: any) => {
@@ -144,5 +159,11 @@ export class DocProfileComponent implements OnInit {
       `https://api.whatsapp.com/send/?text=${ulr}&type=custom_url&app_absent=0`,
       "_blank"
     );
+  }
+
+  redirectToMedicalCenter(medicalCenterData: any) {
+    this.router.navigate([
+      `/medical-center/${medicalCenterData.uuid}/${medicalCenterData.name}`,
+    ]);
   }
 }

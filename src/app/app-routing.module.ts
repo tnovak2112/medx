@@ -67,7 +67,7 @@ const routes: Routes = [
     pathMatch: "full",
   },
   {
-    path: "medical-center/:id/:name",
+    path: "medical-center/:uuid/:name",
     loadChildren: () =>
       import("./features/medical-center/medical-center.module").then(
         (m) => m.MedicalCenterModule

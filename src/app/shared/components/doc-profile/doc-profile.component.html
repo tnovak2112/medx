@@ -4,7 +4,8 @@
     profileData !== undefined &&
     consultData !== undefined &&
     communeData !== undefined &&
-    degreeData !== undefined
+    degreeData !== undefined &&
+    medicalCenterData !== undefined
   "
 >
   <div class="row justify-content-center">
@@ -88,11 +89,32 @@
             <div class="accordion-body">
               <div class="d-flex flex-column">
                 <div>
-                  <h5>Centro Médico</h5>
+                  <h5>{{ medicalCenterData.medical_center_type_name }}</h5>
                 </div>
-                <div>
-                  <h3>{{ consultData.name }}</h3>
+                <div
+                  *ngIf="
+                    medicalCenterData.medical_center_type_id !== 1;
+                    else noMedicalCenter
+                  "
+                >
+                  <h3>
+                    {{ consultData.name }}
+                    <a
+                      href="javascript:void(0);"
+                      (click)="redirectToMedicalCenter(medicalCenterData)"
+                    >
+                      <fa-icon
+                        [icon]="faArrowUpRight"
+                        class="hoverIcon"
+                      ></fa-icon
+                    ></a>
+                  </h3>
                 </div>
+                <ng-template #noMedicalCenter>
+                  <div>
+                    <h3>{{ consultData.name }}</h3>
+                  </div>
+                </ng-template>
               </div>
               <div class="row mt-3">
                 <div class="col-lg-6 col-sm-12 p-2 mb-4">
@@ -114,7 +136,9 @@
                   </div>
                   <div class="d-flex align-items-center">
                     <fa-icon class="ps-3" [icon]="whatsapp"></fa-icon>
-                    <p class="ps-3 mb-0 text-break">{{ consultData.whatsapp }}</p>
+                    <p class="ps-3 mb-0 text-break">
+                      {{ consultData.whatsapp }}
+                    </p>
                   </div>
                 </div>
               </div>
