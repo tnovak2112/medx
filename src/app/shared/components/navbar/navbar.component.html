@@ -1,34 +1,38 @@
 <div class="container-fluid shadow-sm p-1 w-100">
-  <div class="row align-items-center justify-content-evenly text-center">
-    <div class="col-lg-4 col-sm-12 p-1 mx-3 my-3" id="image-container">
-      <img src="assets/images/medx (8).png" alt="Logo" class="img-fluid" />
+  <div class="row align-items-center justify-content-center text-center">
+    <div class="col-lg-4 col-sm-12 p-1 my-3 d-flex justify-content-center">
+      <div id="image-container">
+        <img src="assets/images/medx (8).png" alt="Logo" class="img-fluid" />
+      </div>
     </div>
     <div class="col-lg-4 col-sm-12">
       <a routerLink="home" class="m-1 py-2 px-4">Inicio</a>
       <a routerLink="about" class="m-1 py-2 px-4 text-nowrap">Sobre Medx</a>
       <a routerLink="contact" class="m-1 py-2 px-4">Contacto</a>
-    </div>
+    </div>    
+    <div class="col-4" *ngIf="!state">
+      <a routerLink="/register"
+        ><button class="m-3 shadow-sm text-nowrap" id="register">
+          Regístrate <fa-icon [icon]="regIcon"></fa-icon></button
+      ></a>      
+    </div>    
   </div>
 </div>
 
 <!-- <div class="col-4"></div> -->
-<!-- <div class="col-4" *ngIf="!state">
-      <a routerLink="/register"
-        ><button class="m-3 border no-border" id="register">
-          Registro <fa-icon [icon]="regIcon"></fa-icon></button
-      ></a>
-      <a routerLink="/login"
+
+<!-- <a routerLink="/login"
         ><button class="m- border no-border" id="login">
           Iniciar Sesión <fa-icon [icon]="logIcon"></fa-icon></button
-      ></a>
-    </div>
-    <div class="col-4" *ngIf="state">
-      <a routerLink="/profile"
-        ><button class="m-3 border no-border" id="register">
-          Perfil <fa-icon [icon]="profileIcon"></fa-icon></button
-      ></a>
-      <a (click)="logout()"
-        ><button class="m- border no-border" id="login">
-          Cerrar Sesión <fa-icon [icon]="logoutIcon"></fa-icon></button
-      ></a>
-    </div> -->
+      ></a> -->
+
+<!-- <div class="col-4" *ngIf="state">
+  <a routerLink="/profile"
+    ><button class="m-3 border no-border" id="register">
+      Perfil <fa-icon [icon]="profileIcon"></fa-icon></button
+  ></a>
+  <a (click)="logout()"
+    ><button class="m- border no-border" id="login">
+      Cerrar Sesión <fa-icon [icon]="logoutIcon"></fa-icon></button
+  ></a>
+</div> -->

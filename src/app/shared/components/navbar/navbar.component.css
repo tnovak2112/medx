@@ -2,12 +2,12 @@
     background-color: white;
 }
 #image-container{
-    max-width: 100px;
+    max-width: 90px;
     height: auto;
 }
 #image-container img{
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 #login{
     padding: 12px 25px;
@@ -23,20 +23,23 @@
     background-color: var(--yellow);
 }
 #register{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9rem;
     padding: 12px 25px;
     letter-spacing: 1px;
-    background-color:white;
-    color: rgba(14, 17, 22, 0.8);
-    border-radius: 20px;
+    background-color: var(--purple);
+    color: white;
+    border-radius: 0px;
     border: none;
     font-weight: 700;
     transition: background-color .5s;
 }
 #register fa-icon{
-    color: rgba(14, 17, 22, 0.8);
+    color: white;
+    font-size: .9rem;
 }
 #register:hover{
-    background-color: rgba(0, 168, 120, .6);
+    background-color: var(--purpleO);
 }
 fa-icon{
     font-size: 10px;
@@ -45,16 +48,16 @@ fa-icon{
 }
 a{
     color: var(--blue);
-    letter-spacing: 1px;
-    font-weight: 700;
-    font-family: Titulos;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     transition: color .5s;
     background-color: none;
     text-decoration: none;
-    transition: text-decoration .5s;
+    transition: font-weight .5s;
 }
 a:hover{
     color: var(--lightblue);
-    text-decoration: underline;
+    font-weight: bold;
 }
