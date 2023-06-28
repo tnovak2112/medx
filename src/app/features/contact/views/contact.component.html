@@ -13,27 +13,27 @@
   </div>
   <div class="row p-5">
     <div class="col-lg-3 col-sm-10 p-3">
-      <h4 class="mt-4">
+      <h4 class="mt-4" id="contact-info-title">
         Información <br />
         de Contacto
       </h4>
       <div class="d-flex flex-column mt-4">
-        <h5 class="m-0">Registro</h5>
+        <h5 class="m-0">Regístro:</h5>
         <p class="m-0 mt-2 text-break"><a href="tel:+56942615877">+56 9 4261 5877</a></p>
         <p class="m-0 mt-1 text-break">registro@medxapp.cl</p>
         <p class="m-0 mt-1 text-break">Lunes a Viernes 09:00 - 18:00</p>
       </div>
       <div class="d-flex flex-column mt-4">
-        <h5 class="m-0">Administración</h5>
+        <h5 class="m-0">Administración:</h5>
         <p class="m-0 mt-2 text-break"><a href="tel:+56942615877">+56 9 4261 5877</a></p>
         <p class="m-0 mt-1 text-break">administracion@medxapp.cl</p>
         <p class="m-0 mt-1 text-break">Lunes a Viernes 09:00 - 18:00</p>
       </div>
     </div>
-    <div class="col-lg-9 col-sm-12 shadow" id="yellow-bg">
+    <div class="col-lg-9 col-sm-12" id="yellow-bg">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmitContact()">
         <div class="row">
-          <h3>Escríbenos</h3>
+          <h3>Escríbenos <span>(si los leemos!)</span></h3>
           <p id="subtitle" class="text-break">
             Tus comentarios son muy importantes para nosotros!
           </p>

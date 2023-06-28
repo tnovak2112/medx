@@ -2,59 +2,74 @@
     padding: 40px;
 }
 h1{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Russo', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 3.5px;
 }
 h3{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 1.3rem;
     letter-spacing: 2px;
 }
 h4{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto-reg', sans-serif;
+    font-size: 1rem;
     letter-spacing: 2px;
 }
 h5{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Russo', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
 }
 p{
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--lightblue);
+    font-family: 'Roboto-reg' sans-serif;
+    font-size: .9rem;
+    letter-spacing: 1px;
+    color: var(--purple);
 }
 a{
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--lightblue);
+    color: var(--purple);
     transition: color .2s;
 }
+span{
+    font-size: .7rem;
+}
+#contact-info-title{
+    font-family: 'Russo', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
 a:hover{
-    color: var(--purple);
+    color: var(--orange);
 }
 label{
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 0.5px;
-    font-size: 1.2rem;
+    font-family: 'Roboto-reg', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1rem;
 }
 button{
     background-color: var(--purple);
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    font-family: 'Roboto-bold', sans-serif;
     font-size: .8rem;
-    letter-spacing: 1px;
-    border-radius: 20px;
+    letter-spacing: 2px;
+    border-radius: 0px;
     padding: 10px 0px;
     border: none;
-    transition: background-color .5s;
-    transition: color .5s;
+    transition: background-color .5s, color .5s;
 }
 button:hover{
-    background-color: var(--yellow);
-    color: var(--blue);
+    background-color: var(--orange);
+    color: var(--grey3);
     border: none;
 }
 #yellow-bg{
-    background-color: rgba(218, 226, 223, 0.5);
+    background-color: var(--grey);
     padding: 40px;
+    box-shadow: -8px 8px var(--purple3);
 }
 #subtitle{
     font-family: Arial, Helvetica, sans-serif;

@@ -13,31 +13,32 @@
     border: none;
 }
 h1{
-    font-family: Helvetica;
+    font-family: 'Russo', sans-serif;
     font-size: 2rem;
-    letter-spacing: 2px;
+    letter-spacing: 3.5px;
 }
 h3{
     color: rgba(14, 17, 22, 0.6);
-    font-family: Titulos;
+    font-family: 'Roboto-reg', sans-serif;
 }
 p{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Roboto-light', sans-serif;
+    font-size: 1rem;
     letter-spacing: 1px;
 }
 strong{
     color: var(--purple);
+    font-family: 'Roboto-bold', sans-serif;
 }
 #link-download{
-    background-color: var(--blue);
+    background-color: var(--purple);
     padding: 10px 15px ;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
+    font-family: 'Roboto-reg', sans-serif;
     letter-spacing: 2px;
     color: white;
     transition: background-color .5s;
 }
 #link-download:hover{
-    background-color: var(--purple);
+    background-color: var(--orange);
 }
