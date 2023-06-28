@@ -2,7 +2,7 @@
   <div class="row p-3 m-1 justify-content-center">
     <div class="col-lg-5 col-md-12 col-sm-12 p-1">
       <div class="row justify-content-center">
-        <div class="col-12 d-flex justify-content-center">
+        <div class="col-12 text-center">
           <div id="img-container">
             <img
               class="shadow-sm img-fluid"
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-md-12 col-sm-12 p-3 mb-3 ms-2">
+    <div class="col-lg-6 col-md-12 col-sm-12 p-3 mb-3 ms-4">
       <div class="row justify-content-start">
         <div class="col-12 d-flex justify-content-between">
           <div class="d-flex flex-column">
@@ -53,7 +53,7 @@
     </div>
     <hr class="m-4" />
     <h5>Sobre nosostros:</h5>
-    <p align="justify">{{ medicalCenterData.description }}</p>
+    <p align="justify" id="resume">{{ medicalCenterData.description }}</p>
   </div>
   <div class="row p-3 m-1 justify-content-center">
     <h5>Nuestro equipo:</h5>
@@ -63,7 +63,7 @@
           <tr *ngFor="let person of medicalCenterPersons">
             <th>
               <div id="photo-container">
-                <img src="{{ person.profile_photo }}" class="shadow-sm" alt="photo" />
+                <img src="{{ person.profile_photo }}" alt="photo" />
               </div>
             </th>
             <td id="full-name">
@@ -84,7 +84,7 @@
                 id="table-btn"
                 (click)="sendToProfileFunction(person)"
               >
-                <p>Ver</p>
+                <p>Ir</p>
               </button>
             </td>
           </tr>

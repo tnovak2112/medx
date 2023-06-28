@@ -8,14 +8,32 @@ body{
     background-color: white;
     overflow-x: hidden; /* Hide horizontal scrollbar */;
     margin-bottom: 0px; 
-    font-family: Roboto, "Helvetica Neue", sans-serif;
     padding-bottom: 120px;
     position: relative;
 }
+
 @font-face {
-    font-family: Titulos;
-    src: url(assets/fonts/Questrial-Regular.ttf);
+    font-family: 'Roboto-reg';
+    src: url('assets/fonts/Roboto-Regular.woff') format('woff');
 }
+@font-face {
+    font-family: 'Roboto-bold';
+    src: url('assets/fonts/Roboto-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'Roboto-light';
+    src: url('assets/fonts/Roboto-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'Roboto-thin';
+    src: url('assets/fonts/Roboto-Thin.woff') format('woff');
+}
+@font-face {
+    font-family: 'Russo';
+    src: url('assets/fonts/RussoOne-Regular.woff') format('woff');
+}
+
+
 :root{
     --white: #FFFFFF;  
     --black: #040926;
@@ -23,9 +41,20 @@ body{
     --lightblue: #009FBD;
     --lightblueO: rgba(35,159,189,0.5);
     --blue: #210062;
-    --purple: #77037B; 
+   /*  --purple: #77037B */
     --purpleO: rgba(119,3,123,0.2);
+    /* Nuevos colores */
+    --orange: rgba(224,128,56,1);
+    --orange2: #E7A57F;
+    --orange3: #E9BDA2;
+    --purple: #692975;
+    --purple2: #99779F;
+    --purple3: #B49EB8;
+    --grey: #e8e6e8;
+    --grey2: #E4E3E0;
+    --grey3: #E6E5E2;
 }
+
 
 
 

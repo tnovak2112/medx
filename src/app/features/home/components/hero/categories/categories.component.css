@@ -2,14 +2,14 @@
     border: 1px solid red;
 } */
 fa-icon{
-    font-size: 40px;
-    color: var(--blue);
+    font-size: 35px;
+    color: var(--purple);
 }
 p{
-    font-family: Titulos;
-    color: var(--blue);
+    font-family: 'Roboto-reg', sans-serif;
+    color: var(--orange);
     font-size: 1.2rem;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 a, 
 #icon-container, 
@@ -18,13 +18,14 @@ fa-icon{
     text-decoration: none;
 }
 #icon-container{
-    border: 3px inset var(--purpleO);
+    border: 1px groove var(--purple3);
     background-color: white;
-    transition: background-color .5s;
+    transition: background-color .8s;
     border-radius: 10px;
 }
 #icon-container:hover{
-    background-color: var(--purpleO);
+    background-color: var(--grey3);
+    color: white;
 }
 .hiperlink {
     cursor: pointer;

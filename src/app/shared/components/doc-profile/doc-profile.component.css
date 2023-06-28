@@ -3,8 +3,8 @@
     background-color: white;
 } 
 .image-container{
-    max-width: auto;
-    height: 400px;
+    max-width: 100%;
+    height: 300px;
 }
 .image-container img{
     width: 100%;
@@ -50,49 +50,56 @@
     vertical-align: middle;
 }
 #info-text{
-    font-family: Titulos;
+    font-family: 'Roboto-ligh', sans-serif;
+    font-size: 1rem;
     letter-spacing: 2px;
 }
 .form-check-input{
-    background-color: var(--blue);
+    background-color: var(--purple);
     padding: 8px;
     margin-right: 5px;
 }
 .form-check-label{
     padding: 1px;
-    font-family: Helvetica;
-    color: rgba(14, 17, 22, 0.6);
+    font-family: 'Roboto-reg', sans-serif;
+    color: var(--black);
 }
-h5,
-h3,
-h2{
-    font-family: Helvetica;
-    letter-spacing: 1px;
+a{
+    text-decoration: none;
+    color: var(--purple);
+    font-family: 'Roboto-bold', sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
 h5{
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
     color: rgba(14, 17, 22, 0.6);
 }
 h3{
-    font-weight: 700;
-}
-button{
-    background-color: rgba(0, 168, 120, .2);
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-family: 'Roboto-reg', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
 }
 p{
-    font-family: "Titulos";
-    font-size: 1.2rem;
+    font-family: "Roboto-reg", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
 }
 fa-icon{
-    color: var(--purple);
+    color: var(--orange);
     font-size: 1.3rem;
 }
 h6{
-    font-family: "Titulos";
-    font-size: 1.2rem;
+    font-family: "Roboto-reg";
+    font-size: 1rem;
+    color: var(--black);
+    letter-spacing: 1px;
 }
 .accordion-button{
-    background-color: var(--purpleO);
-    color: var(--blue);
+    background-color: var(--grey3);
+    color: var(--purple);
+    font-family: 'Roboto-bold', sans-serif;
+    letter-spacing: 3px;
 }

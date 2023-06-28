@@ -33,12 +33,12 @@ button{
     letter-spacing: 1px;
 } */
 .container{
-    width: 300px;
+    width: 200px;
     height: auto;
 }
 .img-container{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 }
 .img-container img{
     width: 100%;
@@ -48,33 +48,33 @@ button{
 }
 p{
     color: lightslategrey;
+    font-family: 'Roboto-reg', sans-serif;
+    font-size: .8rem;
 }
 h6{
-    color: gray;
-    font-weight: 500;
-    font-size: 0.8rem;
+    color: lightslategrey;
+    font-size: .9rem;
+    font-family: 'Roboto-bold', sans-serif;
+    letter-spacing: 1px;
 }
 h5{
-    font-size: 1.5rem;
-}
-h5, h6, p{
-    letter-spacing: 1px;
-    font-family: Helvetica;
-}
+    font-size: 1.1rem;
+    font-family: 'Roboto-reg', sans-serif;
+    color: var(--black);
+}    
 button{
-    border-radius: 15px;
-    border: none;
+    border-radius: 0px;
+    border: 0px;
     padding: 10px;
-    font-family: Helvetica;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    font-weight: 700;
-    color: white;
-    background-color:  var(--lightblue);
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: var(--purple);
+    background-color: var(--grey);
     transition: background-color .5s;
     transition: color .5s;
 }
 button:hover{
-    background-color: var(--yellow);
-    color: var(--purple);
+    background-color: var(--orange);
+    color: var(--white);
 }

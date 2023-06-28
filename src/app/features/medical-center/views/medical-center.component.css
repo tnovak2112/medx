@@ -5,38 +5,36 @@
     height: auto;
 }
 h5{
-    font-family: Arial, Helvetica, sans-serif;
-    color: gray;
-    font-weight: 700;
+    font-family:'Roboto-bold', sans-serif;
+    color: lightslategrey;
     letter-spacing: 3px;
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 h4{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto-bold', sans-serif;
     color: var(--black);
-    font-weight: 700;
     letter-spacing: 3px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 fa-icon{
-    font-size: 30px;
-    color: var(--lightblue);
+    font-size: 25px;
+    color: var(--orange);
 }
 #icon-text{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
+    font-family:'Roboto-reg', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
     margin: 0px;
 }
 #img-container{
-    max-width: 450px;
-    height: 400px;
+    max-width: 100%;
+    height: 300px;
 }
 #img-container img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 #logo-container{
     max-width: 150px;
@@ -47,6 +45,12 @@ fa-icon{
     height: 100%;
     object-fit: contain;
 }
+#resume{
+    font-family: 'Roboto-reg', sans-serif;
+    color: var(--black);
+    letter-spacing: 2px;
+    font-size: .9rem;
+}
 button{
     width: 120px;
     padding: 5px 10px;
@@ -54,29 +58,29 @@ button{
     text-overflow: ellipsis;
     white-space: nowrap;
     border: none;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--purple);
+    font-family: 'Roboto-bold', sans-serif;
+    background-color: var(--orange);
     transition: background-color .5s;
 }
 button:hover{
-    background-color: var(--purpleO);
+    background-color: var(--orange2);
 }
 button p{
     padding: 0px;
     margin: 0px;
     font-size: .6rem;
-    font-weight: 700;
     letter-spacing: 1px;
-    color: white;
+    color: var(--white);
+    font-family: 'Roboto-bold', sans-serif;
 }
 button fa-icon{
     font-size: 1rem;
-    color: white;
+    color: var(--white);
 }
 
 /* table style */
 #table-container{
-    max-width: 100%;
+    max-width: 90%;
 }
 #photo-container{
     min-width: 80px;
@@ -94,6 +98,8 @@ table{
 table p{
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto-reg', sans-serif;
+    font-size: .9rem;
 }
 table a{
     text-decoration: none;
@@ -104,17 +110,33 @@ table a:hover{
     color: var(--purple);
 }
 #table-btn{
-    border-radius: 0px;    
+    border-radius: 0px; 
+    background-color: var(--purple);   
+    transition: background-color .5s;
+}
+#table-btn:hover{
+    background-color: var(--grey);
+}
+#table-btn p{
+    color: var(--white);
+    font-family: 'Roboto-bold', sans-serif;
+    letter-spacing: 3px;
+    font-size: .8rem;
+    transition: color .5s;
+}
+#table-btn p:hover{
+    color: var(--orange);
 }
 #category a{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Russo', sans-serif;
+    font-size: .9rem;
     font-weight: bold;
     letter-spacing: 1px;
 }
 #full-name p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    letter-spacing: 2.5px;
+    font-family: 'Roboto-bold', sans-serif;
+    letter-spacing: 2px;
+    font-size: .9rem;
 }
 @media screen and (max-width:425px){
     #icon-text{

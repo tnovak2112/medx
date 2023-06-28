@@ -11,7 +11,7 @@ footer{
     padding: 20px 0px;
 }
 #image-container{
-    max-width: 90px;
+    max-width: 100px;
     height: auto;
     margin-left: 4em;
 }
@@ -23,9 +23,9 @@ footer{
     margin-right: 4em;
 }
 fa-icon{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding: 5px 10px;
-    color: var(--lightblue);
+    color: var(--orange);
 }
 a{
     text-decoration: none;
