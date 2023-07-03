@@ -140,7 +140,7 @@ table a:hover{
 }
 @media screen and (max-width:425px){
     #icon-text{
-        font-size: .8rem;
+        font-size: .9rem;
     }
     fa-icon{
         font-size: 20px;
@@ -152,11 +152,13 @@ table a:hover{
         font-size: 2rem;
     }
     p{
-        font-size: .8rem;
+        font-size: .7rem;
+        letter-spacing: 1px;
     }
     #full-name p{
         letter-spacing: 1.8px;
         font-size: .7rem;
+        text-align: left;
     }
     table{
      text-align: center;

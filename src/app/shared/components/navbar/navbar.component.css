@@ -1,31 +1,10 @@
-.container-fluid {
+img{
+    max-width: 100px;
+}
+
+#nav-container {
     background-color: var(--grey);
     border-bottom: 3px groove var(--purple);
-}
-
-#image-container {
-    max-width: 100px;
-    height: auto;
-}
-
-#image-container img {
-    width: 100%;
-    object-fit: contain;
-}
-
-#login {
-    padding: 12px 25px;
-    background-color: var(--blue);
-    letter-spacing: 1px;
-    color: white;
-    font-weight: 700;
-    border-radius: 20px;
-    border: none;
-    transition: background-color .5s;
-}
-
-#login:hover {
-    background-color: var(--yellow);
 }
 
 #register {
@@ -73,6 +52,35 @@ a:hover {
     color: var(--orange);
 }
 
+/* #image-container {
+    max-width: 100px;
+    height: auto;
+}
+
+#image-container img {
+    width: 100%;
+    object-fit: contain;
+}
+
+#login {
+    padding: 12px 25px;
+    background-color: var(--blue);
+    letter-spacing: 1px;
+    color: white;
+    font-weight: 700;
+    border-radius: 20px;
+    border: none;
+    transition: background-color .5s;
+}
+
+#login:hover {
+    background-color: var(--yellow);
+}
+
+
+
+
+
 @media (max-width: 576px) {
     #image-container {
         max-width: 150px;
@@ -94,4 +102,4 @@ a:hover {
         transition: background-color .5s;
         box-shadow: -3px 3px var(--purple);
     }
-}
+} */ 
