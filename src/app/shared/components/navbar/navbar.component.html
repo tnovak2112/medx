@@ -15,7 +15,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div
-      class="collapse navbar-collapse justify-content-center"
+      class="collapse navbar-collapse justify-content-center align-text"
       id="navbarSupportedContent"
     >
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -35,22 +35,11 @@
           <a routerLink="contact" class="nav-link">Contacto</a>
         </li>
       </ul>
-      <a routerLink="/register">
+      <a href="https://forms.gle/vBu6iT72orbrqw6Z9" target="_blank">
         <button class="m-lg-3 mb-sm-3 text-nowrap" id="register">
           Regístrate <fa-icon [icon]="regIcon"></fa-icon>
         </button>
       </a>
-    </div>
-    <div class="col-lg-4 col-sm-12">
-      <a routerLink="home" class="m-1 py-2 px-4">Inicio</a>
-      <a routerLink="about" class="m-1 py-2 px-4 text-nowrap">Sobre Medx</a>
-      <a routerLink="contact" class="m-1 py-2 px-4">Contacto</a>
-    </div>
-    <div class="col-4" *ngIf="!state">
-      <a href="https://forms.gle/vBu6iT72orbrqw6Z9" target="_blank"
-        ><button class="m-3 text-nowrap" id="register">
-          Regístrate <fa-icon [icon]="regIcon"></fa-icon></button
-      ></a>
     </div>
   </div>
 </nav>

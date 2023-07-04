@@ -34,6 +34,27 @@ const routes: Routes = [
     canActivate: [],
     pathMatch: "full",
   },
+
+  {
+    path: "profile/:id/:name",
+    loadChildren: () =>
+      import("./features/profile/profile.module").then((m) => m.ProfileModule),
+    // canActivate: [AuthGuard],
+    pathMatch: "full",
+  },
+  {
+    path: "medical-center/:uuid/:name",
+    loadChildren: () =>
+      import("./features/medical-center/medical-center.module").then(
+        (m) => m.MedicalCenterModule
+      ),
+    // canActivate: [AuthGuard],
+    pathMatch: "full",
+  },
+  {
+    path: "**",
+    redirectTo: "/home",
+  },
   // {
   //   path: "register",
   //   loadChildren: () =>
@@ -59,22 +80,6 @@ const routes: Routes = [
   //   canActivate: [],
   //   pathMatch: "full",
   // },
-  {
-    path: "profile/:id/:name",
-    loadChildren: () =>
-      import("./features/profile/profile.module").then((m) => m.ProfileModule),
-    // canActivate: [AuthGuard],
-    pathMatch: "full",
-  },
-  {
-    path: "medical-center/:uuid/:name",
-    loadChildren: () =>
-      import("./features/medical-center/medical-center.module").then(
-        (m) => m.MedicalCenterModule
-      ),
-    // canActivate: [AuthGuard],
-    pathMatch: "full",
-  },
 ];
 
 @NgModule({

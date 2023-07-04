@@ -42,6 +42,8 @@ export class MedicalCenterComponent implements OnInit {
         .getMedicalCenter(this.medicalCenterUUID)
         .subscribe((response: any) => {
           if (response.row_length > 0) {
+            console.log(response);
+
             this.medicalCenterData = response.data[0];
           }
         });

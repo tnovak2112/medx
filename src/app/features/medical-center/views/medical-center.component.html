@@ -21,7 +21,9 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-md-12 col-sm-12 p-lg-3 p-sm-1 mb-lg-3 ms-lg-4 ms-sm-1">
+    <div
+      class="col-lg-6 col-md-12 col-sm-12 p-lg-3 p-sm-1 mb-lg-3 ms-lg-4 ms-sm-1"
+    >
       <div class="row justify-content-start">
         <div class="col-12 d-flex justify-content-between">
           <div class="d-flex flex-column">
@@ -46,7 +48,11 @@
             </div>
           </div>
           <div class="d-flex flex-column flex-nowrap" id="logo-container">
-            <img src="{{ medicalCenterData.image_logo }}" class="flex-shrink-0" alt="" />
+            <img
+              src="{{ medicalCenterData.image_logo }}"
+              class="flex-shrink-0"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -76,7 +82,7 @@
               <p>{{ calcularEdad(person.birth_date) + " años" }}</p>
             </td>
             <td id="category">
-              <a href="">{{ person.degree_name }}</a>
+              {{ person.degree_name }}
             </td>
             <td>
               <button
