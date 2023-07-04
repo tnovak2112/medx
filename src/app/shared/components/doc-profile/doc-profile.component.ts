@@ -98,6 +98,10 @@ export class DocProfileComponent implements OnInit {
                           }
                         });
                       });
+
+                      this.listInsuranceData = this.listInsuranceData.filter(
+                        (obj) => obj.checked === true
+                      );
                     }
                   });
                 this.communeService
