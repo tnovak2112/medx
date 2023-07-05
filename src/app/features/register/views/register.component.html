@@ -1,4 +1,149 @@
-<div class="container mb-5 rounded p-5" id="container">
+<div class="container text-center">
+  <h5 class="mt-5 russo">Regístro Profesional</h5>
+  <p class="roboto-bold">¡Empécemos!</p>
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step>
+      <ng-template matStepLabel>Informacion Personal</ng-template>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-sm-12">
+          <div class="d-flex w-100">
+            <div class="form-floating m-1 w-50">
+              <input type="text" class="form-control" id="first_name" />
+              <label for="first_name">Primer Nombre</label>
+            </div>
+            <div class="form-floating m-1 w-50">
+              <input type="text" class="form-control" id="middle_name" />
+              <label for="middle_name">Segundo Nombre</label>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="form-floating m-1 w-50">
+              <input type="text" class="form-control" id="last_name" />
+              <label for="last_name">Apellido Paterno</label>
+            </div>
+            <div class="form-floating m-1 w-50">
+              <input type="text" class="form-control" id="second_last_name" />
+              <label for="second_last_name">Apellido Materno</label>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="form-floating m-1 w-50">
+              <input type="text" class="form-control" id="rut" />
+              <label for="rut">Rut/Pasaporte</label>
+            </div>
+            <div class="form-floating m-1 w-50">
+              <input type="date" class="form-control" id="birth_date" />
+              <label for="birth_date">Fecha Nacimiento</label>
+            </div>
+          </div>
+          <div class="form-floating m-1">
+            <input type="email" class="form-control" id="email" />
+            <label for="email">Correo Electrónico</label>
+          </div>
+          <div class="form-floating m-1">
+            <input type="tel" class="form-control" id="phone" />
+            <label for="phone" class="form-label">Numero de telefono</label>
+          </div>
+          <div class="form-floating m-1 mb-3">
+            <input type="file" name="photo" class="form-control" id="photo" />
+            <label for="photo" class="form-label">Foto de perfíl</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperNext class="button">Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Informacion Académica</ng-template>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h6 class="roboto-bold">Información Académica:</h6>
+        <div class="d-flex">
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="first_name" />
+            <label for="first_name">Primer Nombre</label>
+          </div>
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="middle_name" />
+            <label for="middle_name">Segundo Nombre</label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperNext class="button">Siguiente</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>
+
+<!-- <div class="container">
+  <form action="#" method="post">
+    <div class="row text-center mt-5">
+      <h5 class="mb-3">Registro profesional:</h5>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h6>Informació Personal:</h6>
+        <div class="d-flex w-100">
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="first_name" />
+            <label for="first_name">Primer Nombre</label>
+          </div>
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="middle_name" />
+            <label for="middle_name">Segundo Nombre</label>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="last_name" />
+            <label for="last_name">Apellido Paterno</label>
+          </div>
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="second_last_name" />
+            <label for="second_last_name">Apellido Materno</label>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="rut" />
+            <label for="rut">Rut/Pasaporte</label>
+          </div>
+          <div class="form-floating m-1">
+            <input type="date" class="form-control" id="birth_date" />
+            <label for="birth_date">Fecha Nacimiento</label>
+          </div>
+        </div>
+        <div class="form-floating m-1">
+          <input type="email" class="form-control" id="email" />
+          <label for="email">Correo Electrónico</label>
+        </div>
+        <div class="form-floating m-1">
+          <input type="tel" class="form-control" id="phone" />
+          <label for="phone" class="form-label">Numero de telefono</label>
+        </div>
+        <div class="form-floating m-1 mb-3">
+          <input type="file" name="photo" class="form-control" id="photo" />
+          <label for="photo" class="form-label">Foto de perfíl</label>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <h6 class="roboto-bold">Información Académica:</h6>
+        <div class="d-flex">
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="first_name" />
+            <label for="first_name">Primer Nombre</label>
+          </div>
+          <div class="form-floating m-1">
+            <input type="text" class="form-control" id="middle_name" />
+            <label for="middle_name">Segundo Nombre</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12"></div>
+    </div>
+  </form>
+</div> -->
+
+<!-- <div class="container mb-5 rounded p-5" id="container">
   <div class="row text-center">
     <h1>Registro</h1>
     <h3>Completa el formulario para crear tu cuenta!</h3>
@@ -80,4 +225,4 @@
       </div>
     </div>
   </form>
-</div>
+</div> -->

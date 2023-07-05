@@ -12,6 +12,7 @@ import { Router } from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup = registerForm();
+  isLinear = false;
 
   constructor(
     private router: Router,

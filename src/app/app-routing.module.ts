@@ -52,34 +52,34 @@ const routes: Routes = [
     pathMatch: "full",
   },
   {
+    path: "register",
+    loadChildren: () =>
+      import("./features/register/register.module").then(
+        (m) => m.RegisterModule
+      ),
+    canActivate: [LoginGuard],
+    pathMatch: "full",
+  },
+  {
+    path: "login",
+    loadChildren: () =>
+      import("./features/login/login.module").then((m) => m.LoginModule),
+    canActivate: [LoginGuard],
+    pathMatch: "full",
+  },
+  {
+    path: "restore-password",
+    loadChildren: () =>
+      import("./features/restore-password/restore-password.module").then(
+        (m) => m.RestorePasswordModule
+      ),
+    canActivate: [],
+    pathMatch: "full",
+  },
+  {
     path: "**",
     redirectTo: "/home",
   },
-  // {
-  //   path: "register",
-  //   loadChildren: () =>
-  //     import("./features/register/register.module").then(
-  //       (m) => m.RegisterModule
-  //     ),
-  //   canActivate: [LoginGuard],
-  //   pathMatch: "full",
-  // },
-  // {
-  //   path: "login",
-  //   loadChildren: () =>
-  //     import("./features/login/login.module").then((m) => m.LoginModule),
-  //   canActivate: [LoginGuard],
-  //   pathMatch: "full",
-  // },
-  // {
-  //   path: "restore-password",
-  //   loadChildren: () =>
-  //     import("./features/restore-password/restore-password.module").then(
-  //       (m) => m.RestorePasswordModule
-  //     ),
-  //   canActivate: [],
-  //   pathMatch: "full",
-  // },
 ];
 
 @NgModule({

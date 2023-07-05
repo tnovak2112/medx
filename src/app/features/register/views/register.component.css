@@ -1,4 +1,56 @@
-h3{
+/* div{
+    border: 1px solid red;
+} */
+
+.col-4{
+    border: 1px solid blue;
+} 
+
+.roboto-bold{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 1rem;
+}
+
+.russo{
+    font-family: 'Russo', sans-serif;
+    color: var(--black);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.button{
+    padding: .5rem 2.5rem;
+    border: none;
+    background-color: var(--grey);
+    color: var(--orange);
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    box-shadow: -5px 5px var(--purple);
+    transition: background-color .6s, color .6s, box-shadow .6s;
+}
+
+button:hover{
+    background-color: var(--purple);
+    color: var(--grey);
+    box-shadow: -5px 5px var(--orange);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* h3{
     font-family: Helvetica;
     letter-spacing: 2px;
 }
@@ -36,4 +88,4 @@ button:hover{
 
 .alert-error{
     color: red;
-}
+} */
