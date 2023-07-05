@@ -1,67 +1,50 @@
-<div class="container mb-5 rounded p-5" id="container">
-  <div class="row text-center">
-    <h1>Inicio de sesión</h1>
-    <h3>Completa el formulario para ingresar!</h3>
-  </div>
-
+<div class="container my-5" id="container">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
-    <div class="row p-5">
-      <div class="col-12 p-5 shadow">
+    <div class="row justify-content-center text-left p-4">
+      <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 p-5 bg-color">
         <div class="row">
-          <h3>Formulario de inicio de sesión</h3>
-          <p>Completa el formulario</p>
-          <div class="row">
-            <div class="col-12 p-3">
-              <div class="mb-3">
-                <label for="nameInput" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  formControlName="email"
-                />
-              </div>
-              <div
-                *ngIf="
-                  loginForm.controls['email'].valid === false &&
-                  loginForm.controls['email'].touched
-                "
-                class="alert-error"
-              >
-                Por favor ingrese un email correcto.
-              </div>
-            </div>
+          <h1>Inicio de sesión</h1>
+          <h3 class="roboto-bold">Completa el formulario para ingresar.</h3>
+          <div class="mt-5 mb-3">
+            <label for="nameInput" class="form-label"
+              >Correo electrónico:</label
+            >
+            <input type="email" class="form-control" formControlName="email" />
           </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="mb-3">
-                <label for="nameInput" class="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  formControlName="password"
-                />
-              </div>
-              <div
-                *ngIf="
-                  loginForm.controls['password'].valid === false &&
-                  loginForm.controls['password'].touched
-                "
-                class="alert-error"
-              >
-                Por favor ingresa tu contraseña correcta.
-              </div>
-            </div>
+          <div
+            *ngIf="
+              loginForm.controls['email'].valid === false &&
+              loginForm.controls['email'].touched
+            "
+            class="alert-error"
+          >
+            Por favor ingrese un email correcto.
           </div>
-
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+          <div
+            *ngIf="
+              loginForm.controls['password'].valid === false &&
+              loginForm.controls['password'].touched
+            "
+            class="alert-error"
+          >
+            Por favor ingresa tu contraseña correcta.
+          </div>
           <div class="text-center mt-4">
             <button type="submit" class="w-50">Iniciar Sesión</button>
           </div>
         </div>
-        <div class="container p-3"><hr /></div>
-        <div class="row text-center">
-          <h5>
-            ¿Has olvidado tu contraseña? Recuperala
-            <a routerLink="/restore-password">Aqui!</a>
+        <div class="row text-center mt-4">
+          <h5 class="roboto-bold">
+            ¿Has olvidado tu contraseña? Recupérala
+            <a routerLink="/restore-password">Aquí!</a>
           </h5>
         </div>
       </div>

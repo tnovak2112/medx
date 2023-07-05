@@ -1,37 +1,49 @@
-h3{
-    font-family: Helvetica;
-    letter-spacing: 2px;
+h1{
+    font-family: 'Russo', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
 }
-h4{
-    font-family: Helvetica;
-    letter-spacing: 2px;
+
+.roboto-bold{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 1rem;
 }
-h5{
-    font-family: Helvetica;
+
+a{
+    color: var(--orange);
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 1.1rem;
 }
+
+.bg-color{
+    background-color: var(--grey);
+}
+
 p{
-    font-family: "Titulos";
+    font-family: "Roboto-reg";
     color: rgba(0, 168, 120, 1);
 }
 label{
-    font-family: "TItulos";
-    letter-spacing: 0.5px;
-    font-size: 1.2rem;
+    font-family: "Roboto-reg";
+    letter-spacing: 2px;
+    font-size: 1rem;
 }
 button{
-    background-color: rgba(0, 168, 120, .8);
+    background-color: var(--purple);
     color: white;
-    font-family: Helvetica;
-    font-weight: 700;
-    font-size: .8rem;
+    font-family: 'Roboto-bold';
+    font-size: .9rem;
     letter-spacing: 1px;
-    border-radius: 20px;
+    border-radius: 0px;
     padding: 10px 0px;
+    transition: background-color .5s, color .5s;
     border: none;
-    transition: background-color .5s;
 }
 button:hover{
-    background-color: rgba(0, 168, 120, .5);;
+    background-color: var(--grey);
+    color: var(--purple);
 }
 
 .alert-error{
