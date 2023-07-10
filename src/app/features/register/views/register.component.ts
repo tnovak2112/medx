@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { registerForm } from "../forms/register-form.form";
+import { accountForm } from "../forms/register-form.form";
 import { AuthService } from "src/app/core/service/auth/auth.service";
 import { SnackBarService } from "src/app/core/service/snack-bar/snack-bar.service";
 import { Router } from "@angular/router";
+import { MatStepper } from "@angular/material/stepper";
 
 @Component({
   selector: "app-register",
@@ -11,8 +12,12 @@ import { Router } from "@angular/router";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup = registerForm();
+  @ViewChild("stepper") stepper!: MatStepper;
+  accountForm: FormGroup = accountForm();
+
   isLinear = false;
+  sendCode = false;
+  attempts = 0;
 
   constructor(
     private router: Router,
@@ -23,12 +28,12 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {}
 
   onSubmitRegister() {
-    this.registerForm.markAllAsTouched();
+    this.accountForm.markAllAsTouched();
 
-    if (!this.registerForm.invalid) {
+    if (!this.accountForm.invalid) {
       const user = {
-        email: this.registerForm.controls["email"].value,
-        password: this.registerForm.controls["password"].value,
+        email: this.accountForm.controls["email"].value,
+        password: this.accountForm.controls["password"].value,
       };
       this.authService.registrarUsuario(user).subscribe(
         (response) => {
@@ -54,6 +59,79 @@ export class RegisterComponent implements OnInit {
           }
         }
       );
+    }
+  }
+
+  onSubmitAccountForm() {
+    this.accountForm.markAllAsTouched();
+    if (!this.accountForm.invalid) {
+      const account = {
+        email: this.accountForm.controls["email"].value,
+        codigo: this.accountForm.controls["code"].value,
+      };
+      this.authService.verificarCodigoUsuario(account).subscribe(
+        (response) => {
+          if (response.status === 200) {
+            console.log(response);
+            this.stepper.next();
+          } else {
+            this.snackBarService.snackBarError("Error al verificar el código");
+          }
+        },
+        (err) => {
+          this.snackBarService.snackBarError(err.error.message);
+        }
+      );
+    }
+  }
+
+  sendCodeSMS() {
+    if (this.attempts !== 3) {
+      this.accountForm.markAllAsTouched();
+
+      if (
+        !this.accountForm.controls["phoneNumber"].invalid &&
+        !this.accountForm.controls["email"].invalid
+      ) {
+        const account = {
+          email: this.accountForm.controls["email"].value,
+        };
+        this.authService.generarCodigoUsuario(account).subscribe(
+          (response) => {
+            if (response.status === 200) {
+              this.snackBarService.snackBarSuccess(
+                "Código enviado correctamente."
+              );
+              this.attempts += 1;
+            } else {
+              this.snackBarService.snackBarError("Error al enviar el código");
+            }
+          },
+          (err) => {
+            if (
+              err.error.message ===
+              '[PostgreSQL]: error: duplicate key value violates unique constraint "email_unique"'
+            ) {
+              this.snackBarService.snackBarError(
+                "El correo electrónico seleccionado ya está en uso. Por favor, utilice otro."
+              );
+            } else {
+              this.snackBarService.snackBarError(err.error.message);
+            }
+          }
+        );
+
+        this.sendCode = true;
+      } else {
+        this.snackBarService.snackBarWarning(
+          "El formato del número telefónico o email es incorrecto."
+        );
+      }
+    } else {
+      this.snackBarService.snackBarWarning(
+        "Ha excedido el número de intentos máximos permitidos."
+      );
+      this.router.navigate(["/home"]);
     }
   }
 }

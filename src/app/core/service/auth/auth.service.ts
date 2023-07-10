@@ -48,6 +48,11 @@ export class AuthService {
     return this.http.put<any>(url, user);
   }
 
+  verificarCodigoUsuario(user: any): Observable<any> {
+    const url = `${this.base}/usuario/verificar_codigo`;
+    return this.http.get<any>(url, user);
+  }
+
   actualizarClaveUsuario(user: any): Observable<any> {
     const url = `${this.base}/usuario/actualizar_clave`;
     return this.http.put<any>(url, user);

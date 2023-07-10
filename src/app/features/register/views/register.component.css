@@ -38,17 +38,9 @@ button:hover{
     box-shadow: -5px 5px var(--orange);
 }
 
-
-
-
-
-
-
-
-
-
-
-
+.input-error {
+    border: red 1px solid;
+}
 
 /* h3{
     font-family: Helvetica;

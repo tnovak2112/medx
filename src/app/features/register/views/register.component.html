@@ -3,6 +3,75 @@
   <p class="roboto-bold">¡Empécemos!</p>
   <mat-stepper [linear]="isLinear" #stepper>
     <mat-step>
+      <ng-template matStepLabel>Información de Cuenta</ng-template>
+      <form [formGroup]="accountForm">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-sm-12">
+            <div class="d-flex w-100">
+              <div class="form-floating m-1 w-100">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="email"
+                />
+                <label for="first_name">Correo Electronico</label>
+              </div>
+            </div>
+            <div class="d-flex w-100">
+              <div class="form-floating m-1 w-100">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="phoneNumber"
+                />
+                <label for="first_name">Número Telefonico</label>
+              </div>
+              <div class="form-floating m-1 w-20">
+                <button (click)="sendCodeSMS()" class="button">
+                  Enviar Código
+                </button>
+              </div>
+            </div>
+            <div class="d-flex w-100">
+              <div class="form-floating m-1 w-100">
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                />
+                <label for="first_name">Contraseña</label>
+              </div>
+            </div>
+            <div class="d-flex w-100">
+              <div class="form-floating m-1 w-100">
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="repeat_password"
+                />
+                <label for="first_name">Repetir Contraseña</label>
+              </div>
+            </div>
+            <div class="d-flex w-100" *ngIf="sendCode">
+              <div class="form-floating m-1 w-100">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="code"
+                />
+                <label for="first_name">Código</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button (click)="onSubmitAccountForm()" class="button">
+            Siguiente
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
       <ng-template matStepLabel>Informacion Personal</ng-template>
       <div class="row justify-content-center">
         <div class="col-lg-8 col-sm-12">
@@ -36,14 +105,6 @@
               <label for="birth_date">Fecha Nacimiento</label>
             </div>
           </div>
-          <div class="form-floating m-1">
-            <input type="email" class="form-control" id="email" />
-            <label for="email">Correo Electrónico</label>
-          </div>
-          <div class="form-floating m-1">
-            <input type="tel" class="form-control" id="phone" />
-            <label for="phone" class="form-label">Numero de telefono</label>
-          </div>
           <div class="form-floating m-1 mb-3">
             <input type="file" name="photo" class="form-control" id="photo" />
             <label for="photo" class="form-label">Foto de perfíl</label>
@@ -55,17 +116,56 @@
       </div>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Informacion Académica</ng-template>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <h6 class="roboto-bold">Información Académica:</h6>
-        <div class="d-flex">
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="first_name" />
-            <label for="first_name">Primer Nombre</label>
+      <ng-template matStepLabel>Información Profesional</ng-template>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-sm-12">
+          <div class="d-flex w-100">
+            <div class="form-floating m-1 w-100">
+              <span>Selecciona el titulo que correspondan a tus estudios:</span>
+            </div>
           </div>
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="middle_name" />
-            <label for="middle_name">Segundo Nombre</label>
+          <div class="d-flex w-100">
+            <div class="form-floating m-1 w-100">
+              <input type="text" class="form-control" />
+              <label
+                >Selecciona el titulo que correspondan a tus estudios:
+              </label>
+            </div>
+          </div>
+
+          <div class="d-flex w-100">
+            <div class="form-floating m-1 w-100">
+              <span>En que universidad y año obtuviste tu titulo?</span>
+            </div>
+          </div>
+          <div class="d-flex w-100">
+            <div class="form-floating m-1 w-100">
+              <input type="text" class="form-control" />
+              <label>Ej: U. de la Frontera, 2010. </label>
+            </div>
+          </div>
+
+          <div class="d-flex w-100">
+            <div class="form-floating m-1 w-100">
+              <span>Envíanos una imagen de tu titulo profesional.</span>
+            </div>
+          </div>
+          <div class="d-flex w-100">
+            <div class="form-floating m-1 w-100">
+              <input type="text" class="form-control" />
+              <label>Ej: U. de la Frontera, 2010. </label>
+            </div>
+          </div>
+
+          <div class="d-flex w-100">
+            <div class="form-floating m-1 w-100">
+              <span>
+                A modo de cumplir con los estándares de calidad que ofrecemos a
+                nuestros usuarios, es necesario verificar los estudios que aquí
+                nos indicas. Este documento será almacenado por MEDX como
+                respaldo y no lo publicaremos.
+              </span>
+            </div>
           </div>
         </div>
       </div>
