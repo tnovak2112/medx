@@ -1,4 +1,4 @@
-<div class="container my-5" id="container">
+<!-- <div class="container my-5" id="container">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
     <div class="row justify-content-center text-left p-4">
       <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 p-5 bg-color">
@@ -50,4 +50,381 @@
       </div>
     </div>
   </form>
+</div> -->
+
+<!-- mi perfil -->
+
+<!-- <div class="container">
+  <div class="mt-5 text-center">
+    <h5 class="title">Mi Perfil:</h5>
+    <p>Completa o edita la información que quieres publicar.</p>
+  </div>
+  <div class="row mt-5 px-4 py-4 bg-grey shadow-sm">
+    <div
+      class="col-lg-9 col-md-9 col-sm-12 col-12 d-flex align-self-center align-items-center"
+    >
+      <fa-icon class="icon" [icon]="idIcon"></fa-icon>
+      <p class="mb-0 ms-3">Completar información de perfil</p>
+    </div>
+    <div class="col-lg-3 col-md-3 mt-3 mt-lg-0 mt-md-0 align-self-center">
+      <button class="button">CONTINUAR</button>
+    </div>
+  </div>
+  <div class="row mt-5 px-4 py-4 bg-grey shadow-sm">
+    <div class="col-9 d-flex align-self-center align-items-center">
+      <fa-icon class="icon" [icon]="lockIcon"></fa-icon>
+      <p class="p0 m-0 ms-3">Cambiar contraseña</p>
+    </div>
+    <div class="col-lg-3 col-md-3 mt-3 mt-lg-0 mt-md-0 align-self-center">
+      <button class="button">CAMBIAR</button>
+    </div>
+  </div>
+  <div class="row mt-5 px-4 py-4 bg-grey shadow-sm">
+    <div
+      class="col-lg-9 col-md-9 col-sm-12 col-12 d-flex align-self-center align-items-center"
+    >
+      <fa-icon class="icon" [icon]="editIcon"></fa-icon>
+      <p class="mb-0 ms-3">Actualiza tu información</p>
+    </div>
+    <div class="col-lg-3 col-md-3 mt-3 mt-lg-0 mt-md-0 align-self-center">
+      <button class="button">ACTUALIZAR</button>
+    </div>
+  </div>
+</div> -->
+
+<!-- Formulario registro -->
+<div class="container">
+  <div class="mt-5 text-center">
+    <h5 class="title">Registro Profesional</h5>
+    <p>Completa los datos y publica tu perfil.</p>
+  </div>
+  <div>
+    <form>
+      <div class="row align-items-center mt-5">
+        <h6 class="subtitles">Informacion Personal:</h6>
+        <div class="col-lg-6 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="first_name"
+            />
+            <label for="floatingInput">PRIMER NOMBRE</label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="first_name"
+            />
+            <label for="floatingInput">SEGUNDO NOMBRE</label>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="first_name"
+            />
+            <label for="floatingInput">APELLIDO PATERNO</label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="first_name"
+            />
+            <label for="floatingInput">APELLIDO MATERNO</label>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-6">
+          <div class="form-floating mb-3">
+            <input
+              type="date"
+              class="form-control"
+              id="floatingInput"
+              placeholder="birth_date"
+            />
+            <label for="floatingInput">FECHA NACIMIENTO</label>
+          </div>
+        </div>
+        <div class="col-lg-4 col-6">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="rut"
+            />
+            <label for="floatingInput">RUT</label>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 align-self-start d-flex mb-2">
+          <select
+            class="form-select select-padding"
+            aria-label="seleccion_sexo"
+          >
+            <option selected>SEXO</option>
+            <option value="1">Masculino</option>
+            <option value="2">Femenino</option>
+          </select>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="email"
+            />
+            <label for="floatingInput">CORREO ELECTRÓNICO</label>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="tel"
+              class="form-control"
+              id="floatingInput"
+              placeholder="phone"
+            />
+            <label for="floatingInput">NUMERO DE TELEFONO</label>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 mb-2">
+          <div class="mb-3">
+            <label for="formFile" class="form-label"
+              >SELECCIONA UNA FOTO DE PERFIL:</label
+            >
+            <input class="form-control" type="file" id="formFile" />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row align-items-center mt-5">
+        <h6 class="subtitles">Informacion Profesional:</h6>
+        <div class="col-lg-6 col-xl-6 col-12 mb-2">
+          <select
+            class="form-select select-padding"
+            aria-label="Default select example"
+          >
+            <option selected>TÍTULO UNIVERSITARIO</option>
+            <option value="1">MÉDICO CIRUJANO(A)</option>
+            <option value="1">CIRUJANO(A) DENTISTA</option>
+          </select>
+        </div>
+        <div class="col-lg-6 col-12 d-flex justify-content-evenly">
+          <select
+            class="form-select me-1 select-padding"
+            aria-label="Default select example"
+          >
+            <option selected>CASA DE ESTUDIOS</option>
+            <option value="1">U. ANDRES BELLO</option>
+          </select>
+          <select
+            class="form-select select-padding"
+            aria-label="Default select example"
+          >
+            <option selected>AÑO DE TITULACION</option>
+            <option value="1">2005</option>
+          </select>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-lg-6 col-12 mb-2">
+          <div class="mb-3">
+            <label for="formFile" class="form-label">ADJUNTA TU TÍTULO:</label>
+            <input class="form-control" type="file" id="formFile" />
+          </div>
+        </div>
+        <div class="col-lg-6 col-12 mb-2 align-self-center text-center">
+          <p class="m-0">Has obtenido una especialidad?</p>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input checkbox"
+              type="checkbox"
+              id="inlineCheckbox1"
+              value="Si"
+            />
+            <label class="form-check-label" for="inlineCheckbox1">Si</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input checkbox"
+              type="checkbox"
+              id="inlineCheckbox2"
+              value="No"
+            />
+            <label class="form-check-label" for="inlineCheckbox2">No</label>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-ms-3 col-sm-12 d-flex justify-content-evenly">
+          <select
+            class="form-select select-padding"
+            aria-label="Default select example"
+          >
+            <option selected>AGREGAR ESTUDIO:</option>
+            <option value="1">DOCTORADO</option>
+            <option value="1">MAGISTER</option>
+            <option value="1">DIPLOMADO</option>
+            <option value="1">CURSO</option>
+            <option value="1">NO DESEO AGREGAR MAS</option>
+          </select>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 my-2">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="first_name"
+            />
+            <label for="floatingInput">NOMBRE ESTUDIO</label>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12">
+          <select
+            class="form-select select-padding"
+            aria-label="Default select example"
+          >
+            <option selected>AÑO EN QUE LO OBTUVISTE</option>
+            <option value="1">2005</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mt-3">
+          <label for="Press">ESCRIBE UNA BREVE PRESENTACIÓN SOBRE TI:</label>
+          <textarea
+            name="Presentation"
+            id="Press"
+            cols="12"
+            rows="5"
+          ></textarea>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <h6 class="subtitles">Informacion Laboral:</h6>
+        <p>
+          Ingresa la información donde nuestros usuarios podran ponerse en
+          contacto contigo:
+        </p>
+        <div class="col-lg-6 col-xl-6 col-12 mb-2">
+          <select
+            class="form-select select-padding"
+            aria-label="Default select example"
+          >
+            <option selected>
+              EN QUE TIPO DE ESTABLECIMIENTO DESARROLLAS TUS LABORES?
+            </option>
+            <option value="1">CLÍNICA</option>
+            <option value="1">CENTRO MÉDICO</option>
+          </select>
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="first_name"
+            />
+            <label for="floatingInput">NOMBRE ESTABLECIMIENTO</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="first_name"
+            />
+            <label for="floatingInput">DIRECCIÓN</label>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-12 mb-2">
+          <select
+            class="form-select select-padding"
+            aria-label="Default select example"
+          >
+            <option selected>COMUNA</option>
+            <option value="1">OSORNO</option>
+            <option value="1">MACONDO</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="tel"
+              class="form-control"
+              id="floatingInput"
+              placeholder="phone"
+            />
+            <label for="floatingInput">NUMERO DE TELEFONO</label>
+          </div>
+        </div>
+        <div class="col-lg-3 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="tel"
+              class="form-control"
+              id="floatingInput"
+              placeholder="phone"
+            />
+            <label for="floatingInput">NUMERO DE WHATSAPP</label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-12">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="phone"
+            />
+            <label for="floatingInput">CORREO ELECTRÓNICO</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>Que formas de pago/prevision aceptas en tu práctica?</p>
+          <div class="form-check">
+            <input
+              class="form-check-input checkbox"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              BONO ISAPRE COLMENA
+            </label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
