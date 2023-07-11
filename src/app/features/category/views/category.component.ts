@@ -44,8 +44,10 @@ export class CategoryComponent implements OnInit {
       this.degree_id = Categories.Kinesiologia;
     } else if (this.category === "fonoaudiologia") {
       this.degree_id = Categories.Fonoaudiologia;
-    } else {
+    } else if (this.category === "nutricion") {
       this.degree_id = Categories.Nutricion;
+    } else {
+      this.degree_id = Categories.TerapiaOcupacional;
     }
 
     this.getProfiles();

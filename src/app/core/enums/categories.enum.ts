@@ -5,4 +5,5 @@ export enum Categories {
   Kinesiologia = 4,
   Fonoaudiologia = 5,
   Nutricion = 6,
+  TerapiaOcupacional = 7,
 }

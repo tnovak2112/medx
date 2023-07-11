@@ -6,6 +6,7 @@ import {
   faHeadSideVirus,
   faTooth,
   faUserDoctor,
+  faWheelchair,
 } from "@fortawesome/free-solid-svg-icons";
 import { CategoryService } from "src/app/core/service/category/category.service";
 
@@ -23,6 +24,7 @@ export class CategoriesComponent implements OnInit {
   faCarrot = faCarrot;
   faEarListen = faEarListen;
   faUserDoctor = faUserDoctor;
+  faWheelchair = faWheelchair;
 
   constructor(private readonly categoryService: CategoryService) {}
 
