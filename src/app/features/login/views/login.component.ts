@@ -5,6 +5,12 @@ import { AuthService } from "src/app/core/service/auth/auth.service";
 import { SnackBarService } from "src/app/core/service/snack-bar/snack-bar.service";
 import { Roles } from "src/app/core/enums/roles.enum";
 import { Router } from "@angular/router";
+import {
+  faIdCard,
+  faUnlockKeyhole,
+  faPenToSquare,
+  faPen,
+} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "app-login",
@@ -14,6 +20,9 @@ import { Router } from "@angular/router";
 export class LoginComponent implements OnInit {
   //mailConfirmationForm: FormGroup = mailConfirmationForm();
   loginForm: FormGroup = loginForm();
+  idIcon = faIdCard;
+  lockIcon = faUnlockKeyhole;
+  editIcon = faPenToSquare;
 
   constructor(
     private router: Router,
