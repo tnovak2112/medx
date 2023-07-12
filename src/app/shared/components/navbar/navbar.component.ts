@@ -4,8 +4,9 @@ import {
   faRightFromBracket,
   faRightToBracket,
   faUser,
-  faHouseChimney
+  faHouseChimney,
 } from "@fortawesome/free-solid-svg-icons";
+import { faIdCardClip } from "@fortawesome/free-solid-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { AuthService } from "src/app/core/service/auth/auth.service";
 
@@ -19,7 +20,8 @@ export class NavbarComponent implements OnInit {
   logIcon = faRightToBracket;
   profileIcon = faUser;
   logoutIcon = faRightFromBracket;
-  homeIcon = faHouseChimney
+  homeIcon = faHouseChimney;
+  userIcon = faIdCardClip;
 
   public state: boolean = false;
 

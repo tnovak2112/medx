@@ -162,6 +162,10 @@ button:hover{
     color: var(--purple);
 }
 
+.bg-red{
+    background-color: red;
+}
+
 
 
 

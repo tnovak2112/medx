@@ -36,9 +36,29 @@
         </li>
       </ul>
       <a routerLink="/register">
-        <button class="m-lg-3 mb-sm-3 text-nowrap" id="register">
+        <div class="btn-group dropstart">
+          <button type="button" class="user-button">
+            <fa-icon class="user-icon" [icon]="userIcon"></fa-icon>
+          </button>
+          <button
+            type="button"
+            class="user-button dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+            <li><a class="dropdown-item" href="#">Editar información</a></li>
+            <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+          </ul>
+        </div>
+        <!-- <button class="m-lg-3 mb-sm-3 text-nowrap" id="register">
           Regístrate <fa-icon [icon]="regIcon"></fa-icon>
-        </button>
+        </button> -->
       </a>
     </div>
   </div>
