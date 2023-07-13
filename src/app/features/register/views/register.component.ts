@@ -4,7 +4,6 @@ import { accountForm } from "../forms/register-form.form";
 import { AuthService } from "src/app/core/service/auth/auth.service";
 import { SnackBarService } from "src/app/core/service/snack-bar/snack-bar.service";
 import { Router } from "@angular/router";
-import { MatStepper } from "@angular/material/stepper";
 
 @Component({
   selector: "app-register",
@@ -12,7 +11,6 @@ import { MatStepper } from "@angular/material/stepper";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
-  @ViewChild("stepper") stepper!: MatStepper;
   accountForm: FormGroup = accountForm();
 
   isLinear = false;
@@ -73,7 +71,6 @@ export class RegisterComponent implements OnInit {
         (response) => {
           if (response.status === 200) {
             console.log(response);
-            this.stepper.next();
           } else {
             this.snackBarService.snackBarError("Error al verificar el código");
           }
@@ -82,6 +79,18 @@ export class RegisterComponent implements OnInit {
           this.snackBarService.snackBarError(err.error.message);
         }
       );
+    } else {
+      console.log(this.accountForm.controls["code"].invalid);
+
+      if (this.accountForm.controls["code"].invalid) {
+        this.snackBarService.snackBarWarning(
+          "Para completar el formulario, necesitamos el código de confirmación."
+        );
+      } else {
+        this.snackBarService.snackBarWarning(
+          "Verifica que el formulario esté correcto."
+        );
+      }
     }
   }
 
@@ -95,6 +104,7 @@ export class RegisterComponent implements OnInit {
       ) {
         const account = {
           email: this.accountForm.controls["email"].value,
+          phone: this.accountForm.controls["phoneNumber"].value,
         };
         this.authService.generarCodigoUsuario(account).subscribe(
           (response) => {

@@ -1,4 +1,10 @@
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ValidatorFn,
+  Validators,
+} from "@angular/forms";
 
 export function accountForm(): FormGroup {
   return new FormGroup({
@@ -6,6 +12,7 @@ export function accountForm(): FormGroup {
       Validators.required,
       Validators.email,
       Validators.minLength(5),
+      noEspaciosEnBlancoInicioFin(),
     ]),
     code: new FormControl("", [Validators.required, codeValidator]),
     phoneNumber: new FormControl("+56993942998", [
@@ -37,4 +44,14 @@ function codeValidator(control: FormControl): { [key: string]: any } | null {
   }
 
   return null;
+}
+
+function noEspaciosEnBlancoInicioFin(): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const value = control.value;
+    if (value && value.trim() !== value) {
+      return { noEspaciosEnBlancoInicioFin: true };
+    }
+    return null;
+  };
 }

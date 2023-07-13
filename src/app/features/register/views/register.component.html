@@ -1,328 +1,115 @@
-<div class="container text-center">
-  <h5 class="mt-5 russo">Regístro Profesional</h5>
-  <p class="roboto-bold">¡Empécemos!</p>
-  <mat-stepper [linear]="isLinear" #stepper>
-    <mat-step>
-      <ng-template matStepLabel>Información de Cuenta</ng-template>
-      <form [formGroup]="accountForm">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-sm-12">
-            <div class="d-flex w-100">
-              <div class="form-floating m-1 w-100">
-                <input
-                  type="text"
-                  class="form-control"
-                  formControlName="email"
-                />
-                <label for="first_name">Correo Electronico</label>
-              </div>
+<div class="container my-5" id="container">
+  <form [formGroup]="accountForm">
+    <div class="row justify-content-center text-left p-4">
+      <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 p-5 bg-color">
+        <div class="row">
+          <h1>Regístro Profesional</h1>
+          <h3 class="roboto-bold">¡Empécemos!</h3>
+          <div class="mt-5 mb-3">
+            <label for="nameInput" class="form-label"
+              >Correo electrónico:</label
+            >
+            <input type="email" class="form-control" formControlName="email" />
+          </div>
+          <div
+            *ngIf="
+              accountForm.get('email')?.invalid &&
+              accountForm.get('email')?.touched
+            "
+            class="alert-error alert-label"
+          >
+            <div *ngIf="accountForm.get('email')?.hasError('required')">
+              El correo electronico es requerido.
             </div>
-            <div class="d-flex w-100">
-              <div class="form-floating m-1 w-100">
+          </div>
+
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-8">
+                <label for="nameInput" class="form-label"
+                  >Número Telefonico:</label
+                >
                 <input
                   type="text"
                   class="form-control"
                   formControlName="phoneNumber"
                 />
-                <label for="first_name">Número Telefonico</label>
               </div>
-              <div class="form-floating m-1 w-20">
-                <button (click)="sendCodeSMS()" class="button">
-                  Enviar Código
-                </button>
-              </div>
-            </div>
-            <div class="d-flex w-100">
-              <div class="form-floating m-1 w-100">
-                <input
-                  type="password"
-                  class="form-control"
-                  formControlName="password"
-                />
-                <label for="first_name">Contraseña</label>
-              </div>
-            </div>
-            <div class="d-flex w-100">
-              <div class="form-floating m-1 w-100">
-                <input
-                  type="password"
-                  class="form-control"
-                  formControlName="repeat_password"
-                />
-                <label for="first_name">Repetir Contraseña</label>
-              </div>
-            </div>
-            <div class="d-flex w-100" *ngIf="sendCode">
-              <div class="form-floating m-1 w-100">
-                <input
-                  type="text"
-                  class="form-control"
-                  formControlName="code"
-                />
-                <label for="first_name">Código</label>
+              <div class="col-4">
+                <div class="text-center mt-4">
+                  <button (click)="sendCodeSMS()" class="w-100">
+                    Enviar Código
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <button (click)="onSubmitAccountForm()" class="button">
-            Siguiente
-          </button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Informacion Personal</ng-template>
-      <div class="row justify-content-center">
-        <div class="col-lg-8 col-sm-12">
-          <div class="d-flex w-100">
-            <div class="form-floating m-1 w-50">
-              <input type="text" class="form-control" id="first_name" />
-              <label for="first_name">Primer Nombre</label>
-            </div>
-            <div class="form-floating m-1 w-50">
-              <input type="text" class="form-control" id="middle_name" />
-              <label for="middle_name">Segundo Nombre</label>
-            </div>
-          </div>
-          <div class="d-flex">
-            <div class="form-floating m-1 w-50">
-              <input type="text" class="form-control" id="last_name" />
-              <label for="last_name">Apellido Paterno</label>
-            </div>
-            <div class="form-floating m-1 w-50">
-              <input type="text" class="form-control" id="second_last_name" />
-              <label for="second_last_name">Apellido Materno</label>
-            </div>
-          </div>
-          <div class="d-flex">
-            <div class="form-floating m-1 w-50">
-              <input type="text" class="form-control" id="rut" />
-              <label for="rut">Rut/Pasaporte</label>
-            </div>
-            <div class="form-floating m-1 w-50">
-              <input type="date" class="form-control" id="birth_date" />
-              <label for="birth_date">Fecha Nacimiento</label>
-            </div>
-          </div>
-          <div class="form-floating m-1 mb-3">
-            <input type="file" name="photo" class="form-control" id="photo" />
-            <label for="photo" class="form-label">Foto de perfíl</label>
-          </div>
-        </div>
-      </div>
-      <div>
-        <button mat-button matStepperNext class="button">Siguiente</button>
-      </div>
-    </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Información Profesional</ng-template>
-      <div class="row justify-content-center">
-        <div class="col-lg-8 col-sm-12">
-          <div class="d-flex w-100">
-            <div class="form-floating m-1 w-100">
-              <span>Selecciona el titulo que correspondan a tus estudios:</span>
-            </div>
-          </div>
-          <div class="d-flex w-100">
-            <div class="form-floating m-1 w-100">
-              <input type="text" class="form-control" />
-              <label
-                >Selecciona el titulo que correspondan a tus estudios:
-              </label>
+          <div
+            *ngIf="
+              accountForm.get('phoneNumber')?.invalid &&
+              accountForm.get('phoneNumber')?.touched
+            "
+            class="alert-error alert-label"
+          >
+            <div *ngIf="accountForm.get('phoneNumber')?.hasError('required')">
+              El número telefonico es requerido.
             </div>
           </div>
 
-          <div class="d-flex w-100">
-            <div class="form-floating m-1 w-100">
-              <span>En que universidad y año obtuviste tu titulo?</span>
-            </div>
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+            />
           </div>
-          <div class="d-flex w-100">
-            <div class="form-floating m-1 w-100">
-              <input type="text" class="form-control" />
-              <label>Ej: U. de la Frontera, 2010. </label>
-            </div>
-          </div>
-
-          <div class="d-flex w-100">
-            <div class="form-floating m-1 w-100">
-              <span>Envíanos una imagen de tu titulo profesional.</span>
-            </div>
-          </div>
-          <div class="d-flex w-100">
-            <div class="form-floating m-1 w-100">
-              <input type="text" class="form-control" />
-              <label>Ej: U. de la Frontera, 2010. </label>
+          <div
+            *ngIf="
+              accountForm.get('password')?.invalid &&
+              accountForm.get('password')?.touched
+            "
+            class="alert-error alert-label"
+          >
+            <div *ngIf="accountForm.get('password')?.hasError('required')">
+              La contraseña es requerida.
             </div>
           </div>
 
-          <div class="d-flex w-100">
-            <div class="form-floating m-1 w-100">
-              <span>
-                A modo de cumplir con los estándares de calidad que ofrecemos a
-                nuestros usuarios, es necesario verificar los estudios que aquí
-                nos indicas. Este documento será almacenado por MEDX como
-                respaldo y no lo publicaremos.
-              </span>
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Repetir Contraseña</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="repeat_password"
+            />
+          </div>
+          <div
+            *ngIf="
+              accountForm.get('repeat_password')?.invalid &&
+              accountForm.get('repeat_password')?.touched
+            "
+            class="alert-error alert-label"
+          >
+            <div
+              *ngIf="accountForm.get('repeat_password')?.hasError('required')"
+            >
+              La contraseña es requerida.
             </div>
           </div>
-        </div>
-      </div>
-      <div>
-        <button mat-button matStepperNext class="button">Siguiente</button>
-      </div>
-    </mat-step>
-  </mat-stepper>
-</div>
 
-<!-- <div class="container">
-  <form action="#" method="post">
-    <div class="row text-center mt-5">
-      <h5 class="mb-3">Registro profesional:</h5>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <h6>Informació Personal:</h6>
-        <div class="d-flex w-100">
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="first_name" />
-            <label for="first_name">Primer Nombre</label>
-          </div>
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="middle_name" />
-            <label for="middle_name">Segundo Nombre</label>
-          </div>
-        </div>
-        <div class="d-flex">
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="last_name" />
-            <label for="last_name">Apellido Paterno</label>
-          </div>
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="second_last_name" />
-            <label for="second_last_name">Apellido Materno</label>
-          </div>
-        </div>
-        <div class="d-flex">
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="rut" />
-            <label for="rut">Rut/Pasaporte</label>
-          </div>
-          <div class="form-floating m-1">
-            <input type="date" class="form-control" id="birth_date" />
-            <label for="birth_date">Fecha Nacimiento</label>
-          </div>
-        </div>
-        <div class="form-floating m-1">
-          <input type="email" class="form-control" id="email" />
-          <label for="email">Correo Electrónico</label>
-        </div>
-        <div class="form-floating m-1">
-          <input type="tel" class="form-control" id="phone" />
-          <label for="phone" class="form-label">Numero de telefono</label>
-        </div>
-        <div class="form-floating m-1 mb-3">
-          <input type="file" name="photo" class="form-control" id="photo" />
-          <label for="photo" class="form-label">Foto de perfíl</label>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <h6 class="roboto-bold">Información Académica:</h6>
-        <div class="d-flex">
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="first_name" />
-            <label for="first_name">Primer Nombre</label>
-          </div>
-          <div class="form-floating m-1">
-            <input type="text" class="form-control" id="middle_name" />
-            <label for="middle_name">Segundo Nombre</label>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-12 col-sm-12"></div>
-    </div>
-  </form>
-</div> -->
-
-<!-- <div class="container mb-5 rounded p-5" id="container">
-  <div class="row text-center">
-    <h1>Registro</h1>
-    <h3>Completa el formulario para crear tu cuenta!</h3>
-  </div>
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
-    <div class="row p-5">
-      <div class="col-12 p-5 shadow">
-        <div class="row">
-          <h3>Formulario de registro</h3>
-          <p>Completa el formulario</p>
-          <div class="row">
-            <div class="col-12 p-3">
-              <div class="mb-3">
-                <label for="nameInput" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  formControlName="email"
-                />
-              </div>
-              <div
-                *ngIf="
-                  registerForm.controls['email'].valid === false &&
-                  registerForm.controls['email'].touched
-                "
-                class="alert-error"
-              >
-                Por favor ingrese un email correcto.
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6 p-3">
-              <div class="mb-3">
-                <label for="nameInput" class="form-label">Contraseña</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  formControlName="password"
-                />
-              </div>
-              <div
-                *ngIf="
-                  registerForm.controls['password'].valid === false &&
-                  registerForm.controls['password'].touched
-                "
-                class="alert-error"
-              >
-                Por favor ingresa una contraseña correcta.
-              </div>
-            </div>
-            <div class="col-6 p-3">
-              <div class="mb-3">
-                <label for="nameInput" class="form-label"
-                  >Repite Contraseña</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  formControlName="repeat_password"
-                />
-              </div>
-              <div
-                *ngIf="
-                  registerForm.controls['repeat_password'].valid === false &&
-                  registerForm.controls['repeat_password'].touched
-                "
-                class="alert-error"
-              >
-                Las contraseñas deben cohincidir.
-              </div>
-            </div>
+          <div class="mb-3" *ngIf="sendCode">
+            <label for="nameInput" class="form-label">Código</label>
+            <input type="text" class="form-control" formControlName="code" />
           </div>
 
           <div class="text-center mt-4">
-            <button type="submit" class="w-50">Registrarse</button>
+            <button (click)="onSubmitAccountForm()" class="w-50">
+              Registrarse
+            </button>
           </div>
         </div>
       </div>
     </div>
   </form>
-</div> -->
+</div>

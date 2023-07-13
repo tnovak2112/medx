@@ -1,12 +1,8 @@
-/* div{
-    border: 1px solid red;
-} */
-
-
-
-.col-4{
-    border: 1px solid blue;
-} 
+h1{
+    font-family: 'Russo', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
 
 .roboto-bold{
     font-family: 'Roboto',sans-serif;
@@ -15,11 +11,49 @@
     font-size: 1rem;
 }
 
-.russo{
-    font-family: 'Russo', sans-serif;
-    color: var(--black);
-    font-size: 1.4rem;
+a{
+    color: var(--orange);
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 1.1rem;
+}
+
+.bg-color{
+    background-color: var(--grey);
+}
+
+p{
+    font-family: "Roboto-reg";
+    color: rgba(0, 168, 120, 1);
+}
+label{
+    font-family: "Roboto-reg";
     letter-spacing: 2px;
+    font-size: 1rem;
+}
+button{
+    background-color: var(--purple);
+    color: white;
+    font-family: 'Roboto-bold';
+    font-size: .9rem;
+    letter-spacing: 1px;
+    border-radius: 0px;
+    padding: 10px 0px;
+    transition: background-color .5s, color .5s;
+    border: none;
+}
+button:hover{
+    background-color: var(--grey);
+    color: var(--purple);
+}
+
+.alert-error{
+    color: red;
+}
+
+.alert-label{
+    text-align-last: right;
+    margin-top: -10px;
+    margin-bottom: 5px;
 }
 
 .button{
@@ -39,47 +73,3 @@ button:hover{
     color: var(--grey);
     box-shadow: -5px 5px var(--orange);
 }
-
-.input-error {
-    border: red 1px solid;
-}
-
-/* h3{
-    font-family: Helvetica;
-    letter-spacing: 2px;
-}
-h4{
-    font-family: Helvetica;
-    letter-spacing: 2px;
-}
-h5{
-    font-family: Helvetica;
-}
-p{
-    font-family: "Titulos";
-    color: rgba(0, 168, 120, 1);
-}
-label{
-    font-family: "TItulos";
-    letter-spacing: 0.5px;
-    font-size: 1.2rem;
-}
-button{
-    background-color: rgba(0, 168, 120, .8);
-    color: white;
-    font-family: Helvetica;
-    font-weight: 700;
-    font-size: .8rem;
-    letter-spacing: 1px;
-    border-radius: 20px;
-    padding: 10px 0px;
-    border: none;
-    transition: background-color .5s;
-}
-button:hover{
-    background-color: rgba(0, 168, 120, .5);;
-}
-
-.alert-error{
-    color: red;
-} */

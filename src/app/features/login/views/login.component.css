@@ -1,4 +1,4 @@
-/* h1{
+h1{
     font-family: 'Russo', sans-serif;
     font-size: 1.4rem;
     letter-spacing: 1px;
@@ -48,7 +48,12 @@ button:hover{
 
 .alert-error{
     color: red;
-} */
+}
+
+.alert-label{
+    text-align-last: right;
+    margin-top: -15px;
+}
 
 
 
@@ -79,9 +84,9 @@ button:hover{
 .button:hover{
     background-color: var(--purple3);
     color: var(--purple);
-}*/
+}
 
-/* .title{
+.title{
     font-family: 'Russo', sans-serif;
     font-size: 1.5rem;
     letter-spacing: 1px;
@@ -91,8 +96,7 @@ p{
     font-family: 'Roboto-reg', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 1px;
-} */
-/*
+}
 .icon{
     font-size: 1.5rem;
     color: var(--orange);
@@ -102,7 +106,7 @@ p{
 
 
 /* Formulario registro */
-label, 
+/* label, 
 select,
 input{
     font-family: 'Roboto-light', sans-serif;
@@ -161,7 +165,7 @@ button:hover{
     background-color: var(--grey);
     color: var(--purple);
 }
-
+ */
 
 
 
